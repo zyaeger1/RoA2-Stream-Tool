@@ -293,7 +293,7 @@ body {
 
 .wrappers {
     position: absolute;
-    font-family: "Project+";
+    font-family: "Deansgate";
     text-align: center;
     white-space: nowrap;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
@@ -363,7 +363,7 @@ body {
     width: 690px;
     height: 90px;
     top: 495px;
-    font-family: "Project+";
+    font-family: "Deansgate";
     white-space: nowrap;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     opacity: 0;
@@ -596,7 +596,7 @@ body {
 .scoreNum {
     height: 66px;
     width: 64px;
-    font-family: "Project+";
+    font-family: "Deansgate";
     z-index: 2;
     display: flex;
     justify-content: center;

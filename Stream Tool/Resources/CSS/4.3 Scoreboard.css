@@ -154,7 +154,7 @@ body {
     top: 27px;
     left: -12px;
     color: black;
-    font-family: "Project+";
+    font-family: "Deansgate";
 }
 #scoreNumL {
     -webkit-text-stroke: 1px var(--colorL);
@@ -471,7 +471,7 @@ man i hate chromium
 .pIntro {
     width: 500px;
     line-height: 74px;
-    font-family: "Project+";
+    font-family: "Deansgate";
     white-space: nowrap;
 }
 #p1Intro {
@@ -491,7 +491,7 @@ man i hate chromium
     justify-content: center;
     width: 100%;
     height: 100%;
-    font-family: "Project+";
+    font-family: "Deansgate";
     font-size: 110px;
     white-space: nowrap;
 }
@@ -515,7 +515,7 @@ man i hate chromium
     align-items: center;
     height: 100%;
     right: 550px;
-    font-family: "Project+";
+    font-family: "Deansgate";
     font-size: 110px;
     opacity: 0;
 }
