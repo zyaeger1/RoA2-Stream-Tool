@@ -4,7 +4,7 @@ import { playerFinder } from "../Finder/Player Finder.mjs";
 import { skinFinder } from "../Finder/Skin Finder.mjs";
 import { getRecolorImage } from "../GetImage.mjs";
 import { inside, stPath } from "../Globals.mjs";
-import { RoaRecolor } from "../RoA WebGL Shader.mjs";
+import { PPlusRecolor } from "../Project+ WebGL Shader.mjs";
 import { settings } from "../Settings.mjs";
 import { readyToUpdate } from "../Write Scoreboard.mjs";
 
@@ -30,7 +30,7 @@ export class Player {
 
         this.pNum = id;
         // will generate all images for the character
-        this.shader = new RoaRecolor;
+        this.shader = new PPlusRecolor;
 
     }
 
@@ -210,7 +210,7 @@ export class Player {
                         this.char,
                         this.charInfo.skinList[i],
                         this.charInfo.colorData,
-                        "Skins",
+                        "Icons",
                         "P2"
                     );
                     // preload it so the gui doesnt implode when loading 30 images at once
@@ -239,9 +239,9 @@ export class Player {
     async getBrowserSrc(char, skin, extraPath, failPath) {
 
         let browserCharPath = "Resources/Characters";
-        if (settings.isWsChecked()) {
+        /* if (settings.isWsChecked()) {
             browserCharPath = "Resources/Characters/_Workshop";
-        }
+        } */
         
         if (await fileExists(`${stPath.char}/${char}/${extraPath}/${skin.name}.png`) && !skin.force) {
             return browserCharPath + `/${char}/${extraPath}/${skin.name}.png`;

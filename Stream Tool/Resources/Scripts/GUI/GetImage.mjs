@@ -1,9 +1,9 @@
 import { stPath } from './Globals.mjs';
 import { fileExists } from './File System.mjs';
 import { Player } from './Player/Player.mjs';
-import { RoaRecolor } from './RoA WebGL Shader.mjs';
+import { PPlusRecolor } from './Project+ WebGL Shader.mjs';
 
-const anonShader = new RoaRecolor;
+const anonShader = new PPlusRecolor;
 
 /**
  * @typedef {Object} Skin
@@ -46,7 +46,7 @@ export async function getRecolorImage(shader, char, skin, colorData, imgType, fa
             }
             const trueColorData = colorData[skin.name] || colorData.Default;
             const shaderToUse = shader || anonShader;
-            return await shaderToUse.getRoARecolor(
+            return await shaderToUse.getPPlusRecolor(
                 char,
                 charImgPath,
                 trueColorData.ogColor,
@@ -93,7 +93,7 @@ export async function getTrailImage(shader, char, skin, color) {
     }
     
     if (filePath) {
-        return await shader.getRoARecolor(
+        return await shader.getPPlusRecolor(
             "Trail",
             filePath,
             [127, 127, 127, 1], // any color would do
@@ -112,7 +112,7 @@ export async function genericRecolor(src, color) {
     // we add "FFFFFF" to the color to avoid shader issues when using only 1 color
     const colorForShader = color.substring(1) + "FFFFFF";
 
-    return await anonShader.getRoARecolor(
+    return await anonShader.getPPlusRecolor(
         "Trail",
         src,
         [127, 127, 127, 1], // any color would do

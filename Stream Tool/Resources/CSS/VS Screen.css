@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: "LemonMilk";
-    src: url('../Fonts/LEMONMILK-Medium.otf');
+    font-family: "Project+";
+    src: url('../Fonts/genuine-865.ttf');
 }
 
 :root {
@@ -216,7 +216,7 @@ body {
     width: 24px;
     transform: translate(0px, 2px);
 }
-.playerInfoIconBsky {
+/*.playerInfoIconBsky {
     height: 24px;
     width: 24px;
     transform: translate(0px, 0px);
@@ -230,7 +230,7 @@ body {
     height: 24px;
     width: 24px;
     transform: translate(0px, -1px);
-}
+}*/
 
 
 .character {
@@ -293,7 +293,7 @@ body {
 
 .wrappers {
     position: absolute;
-    font-family: "LemonMilk";
+    font-family: "Project+";
     text-align: center;
     white-space: nowrap;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
@@ -363,7 +363,7 @@ body {
     width: 690px;
     height: 90px;
     top: 495px;
-    font-family: "LemonMilk";
+    font-family: "Project+";
     white-space: nowrap;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     opacity: 0;
@@ -596,7 +596,7 @@ body {
 .scoreNum {
     height: 66px;
     width: 64px;
-    font-family: "LemonMilk";
+    font-family: "Project+";
     z-index: 2;
     display: flex;
     justify-content: center;

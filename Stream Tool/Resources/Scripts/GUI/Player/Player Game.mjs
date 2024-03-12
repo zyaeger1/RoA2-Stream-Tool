@@ -134,11 +134,7 @@ export class PlayerGame extends Player {
 
         // determine which folder is going to be used
         let folder;
-        if (settings.isAltArtChecked() && this.charInfo.scoreboard.alt) {
-            folder = "AltArt";
-        } else {
-            folder = "Skins";
-        }
+        folder = "Skins";
 
         // get us a valid image
         promises.push(getRecolorImage(
@@ -164,7 +160,7 @@ export class PlayerGame extends Player {
     /** Sets the VS Screen image depending on recolors and settings */
     async setVsImg() {
 
-        if (settings.isHDChecked()) {
+        /* if (settings.isHDChecked()) {
 
             const promises = [];
             const skinName = this.skin.name.includes("LoA") && !settings.isNoLoAChecked() ? "LoA HD" : "HD";
@@ -194,34 +190,12 @@ export class PlayerGame extends Player {
                 this.vsBrowserSrc = value[1];
             })
 
-        } else { // if no HD, just use the scoreboard image
-            if (settings.isAltArtChecked() && this.charInfo.scoreboard.alt) {
-                // if the character is using alt art, we need to generate a new image
-                const promises = [];
-                promises.push(getRecolorImage(
-                    this.shader,
-                    this.char,
-                    this.skin,
-                    this.charInfo.colorData,
-                    "Skins",
-                    this.randomImg
-                ));
-                promises.push(this.getBrowserSrc(
-                    this.char, this.skin, "Skins", this.randomImg
-                ));
-
-                // when those finish loading, set the image values
-                await Promise.all(promises).then( (value) => {
-                    this.vsSrc = value[0];
-                    this.vsBrowserSrc = value[1];
-                });
-            } else {
+        } else { */
                 // by default, use the scoreboard image
                 this.vsSrc = this.scSrc;
                 this.vsBrowserSrc = this.scBrowserSrc;
-            }
-            this.vsSkin = this.skin;            
-        }
+        //    }
+        this.vsSkin = this.skin;            
 
     }
 
@@ -252,11 +226,7 @@ export class PlayerGame extends Player {
         if (!await fileExists(`${trueBGPath}/${vsBG}`)) {
             this.vsBgSrc = "Resources/Characters/BG.webm";
         } else {
-            if (settings.isWsChecked()) {
-                this.vsBgSrc = `Resources/Characters/_Workshop/${vsBG}`;
-            } else {
-                this.vsBgSrc = `Resources/Characters/${vsBG}`;
-            }
+            this.vsBgSrc = `Resources/Characters/${vsBG}`;
         }
 
     }
@@ -280,11 +250,6 @@ export class PlayerGame extends Player {
                 scCharPos[0] = charPos.scoreboard[this.skin.name].x;
                 scCharPos[1] = charPos.scoreboard[this.skin.name].y;
                 scCharPos[2] = charPos.scoreboard[this.skin.name].scale;
-            } else if (settings.isAltArtChecked() && charPos.scoreboard.alt) {
-                // for workshop alternative art
-                scCharPos[0] = charPos.scoreboard.alt.x;
-                scCharPos[1] = charPos.scoreboard.alt.y;
-                scCharPos[2] = charPos.scoreboard.alt.scale;
             } else { // if none of the above, use a default position
                 scCharPos[0] = charPos.scoreboard.neutral.x;
                 scCharPos[1] = charPos.scoreboard.neutral.y;
@@ -294,10 +259,10 @@ export class PlayerGame extends Player {
             if (this.pNum % 2 == 0) {
                 scCharPos[0] = 30;
             } else {
-                scCharPos[0] = 35;
+                scCharPos[0] = 30;
             }
-            scCharPos[1] = -10;
-            scCharPos[2] = 1.2;
+            scCharPos[1] = 5;
+            scCharPos[2] = 1;
         }
         return scCharPos;
     }
@@ -321,17 +286,17 @@ export class PlayerGame extends Player {
             }
         } else { // if there are no character positions, set positions for "Random"
             if (this.pNum % 2 == 0) {
-                vsCharPos[0] = -500;
+                vsCharPos[0] = -475;
             } else {
                 vsCharPos[0] = -475;
             }
             //if doubles, we need to move it up a bit
             if (gamemode.getGm() == 2) {
-                vsCharPos[1] = -125;
+                vsCharPos[1] = 0;
             } else {
                 vsCharPos[1] = 0;
             }
-            vsCharPos[2] = .8;
+            vsCharPos[2] = 2.4;
         }
         return vsCharPos;
     }

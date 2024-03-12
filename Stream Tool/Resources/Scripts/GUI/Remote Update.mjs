@@ -28,22 +28,22 @@ export async function updateGUI(data) {
 
     // set the settings
     settings.setIntro(data.allowIntro);
-    if (data.altSkin != settings.isAltArtChecked()) {
+    /* if (data.altSkin != settings.isAltArtChecked()) {
         settings.setAltArt(data.altSkin);
         await settings.toggleAltArt();
-    }
-    if (data.forceHD != settings.isHDChecked()) {
+    } */
+    /* if (data.forceHD != settings.isHDChecked()) {
         settings.setHD(data.forceHD);
         await settings.toggleHD();
     }
     if (data.noLoAHD != settings.isNoLoAChecked()) {
         settings.setNoLoA(data.noLoAHD);
         await settings.toggleNoLoA();
-    }
-    if (data.workshop != settings.isWsChecked()) {
+    } */
+    /* if (data.workshop != settings.isWsChecked()) {
         settings.setWs(data.workshop);
         await settings.toggleWs();
-    }
+    } */
     if (data.customRound != settings.isCustomRoundChecked()) {
         settings.setCustomRound(data.customRound);
         settings.toggleCustomRound();

@@ -1,7 +1,7 @@
 import { Finder } from "./Finder.mjs";
 import { getJson, getPresetList } from '../File System.mjs';
 import { getRecolorImage } from "../GetImage.mjs";
-import { customChange, setCurrentPlayer } from "../Custom Skin.mjs";
+// import { customChange, setCurrentPlayer } from "../Custom Skin.mjs";
 import { current, stPath } from "../Globals.mjs";
 import { charFinder } from "./Char Finder.mjs";
 
@@ -107,7 +107,7 @@ class PlayerFinder extends Finder {
                             char : preset.characters[i].character,
                             skin : preset.characters[i].skin,
                             hex : preset.characters[i].hex,
-                            customImg : preset.characters[i].customImg
+                            // customImg : preset.characters[i].customImg
                         }
 
                         // add them to the div we created before
@@ -130,7 +130,7 @@ class PlayerFinder extends Finder {
                             char : preset.characters[i].character,
                             skin : preset.characters[i].skin,
                             hex : preset.characters[i].hex,
-                            customImg : preset.characters[i].customImg,
+                            // customImg : preset.characters[i].customImg,
                         });
                         // we have to position it
                         this.positionCharImg(preset.characters[i].skin, charImg, charJson);
@@ -236,13 +236,13 @@ class PlayerFinder extends Finder {
                         skin = structuredClone(skinImgs[i].charJson.skinList[j]);
 
                         // if we got a custom skin
-                        if (skinImgs[i].customImg) {
+                        /* if (skinImgs[i].customImg) {
 
                             // add in custom data
                             skin.hex = skinImgs[i].hex;
                             skin.force = true;
 
-                        }
+                        } */
 
                         // we dont need to look for more
                         break;
@@ -293,12 +293,12 @@ class PlayerFinder extends Finder {
 
         // character change
         await player.charChange(pData.char, true);
-        if (pData.customImg) {
+        /* if (pData.customImg) {
             setCurrentPlayer(player);
             customChange(pData.hex, pData.skin);
-        } else { // search for all skins for name matches
+        } else { */ // search for all skins for name matches
             player.skinChange(player.findSkin(pData.skin));
-        }
+        // }
 
         // and hide the finder of course
         this.hide();

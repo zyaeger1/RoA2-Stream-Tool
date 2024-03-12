@@ -5,9 +5,6 @@
   "socials": {
     "twitter": "Twitter",
     "twitch": "Twitch",
-    "yt": "Youtube",
-    "bsky": "Bluesky",
-    "masto": "Mastodon",
-    "cohost": "Cohost"
+    "yt": "Youtube"
   }
 }

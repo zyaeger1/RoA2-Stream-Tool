@@ -1,38 +1,46 @@
 [
     {
         "name": "Red",
-        "hex": "#ed1c23"
+        "hex": "#FE2727"
     },
     {
         "name": "Blue",
-        "hex": "#00b7ef"
-    },
-    {
-        "name": "Pink",
-        "hex": "#ffa3b1"
-    },
-    {
-        "name": "Green",
-        "hex": "#a8e61d"
-    },
-    {
-        "name": "NetGreen",
-        "hex": "#42e564"
-    },
-    {
-        "name": "Purple",
-        "hex": "#846ae9"
-    },
-    {
-        "name": "Magenta",
-        "hex": "#ee1c8f"
+        "hex": "#4756DD"
     },
     {
         "name": "Yellow",
-        "hex": "#dc8c00"
+        "hex": "#FDDD26"
     },
     {
-        "name": "CPU",
-        "hex": "#808080"
+        "name": "Green",
+        "hex": "#17D62B"
+    },
+    {
+        "name": "Pink",
+        "hex": "#FD24C6"
+    },
+    {
+        "name": "Purple",
+        "hex": "#B524FD"
+    },
+    {
+        "name": "Orange",
+        "hex": "#FE8811"
+    },
+    {
+        "name": "Cyan",
+        "hex": "#24FDDF"
+    },
+    {
+        "name": "Grey",
+        "hex": "#939292"
+    },
+    {
+        "name": "Black",
+        "hex": "#000000"
+    },
+    {
+        "name": "White",
+        "hex": "#FFFFFF"
     }
 ]

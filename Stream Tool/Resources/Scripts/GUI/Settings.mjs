@@ -13,12 +13,12 @@ import { teams } from "./Team/Teams.mjs";
 class GuiSettings {
 
     #introCheck = document.getElementById("allowIntro");
-    #altArtCheck = document.getElementById("forceAlt");
+    // #altArtCheck = document.getElementById("forceAlt");
 
-    #HDCheck = document.getElementById('forceHD');
-    #noLoACheck = document.getElementById('noLoAHD');
+    // #HDCheck = document.getElementById('forceHD');
+    // #noLoACheck = document.getElementById('noLoAHD');
 
-    #wsCheck = document.getElementById('workshopToggle');
+    // #wsCheck = document.getElementById('workshopToggle');
     #customRound = document.getElementById('customRound');
     #forceWLCheck = document.getElementById('forceWLToggle');
     #scoreAutoCheck = document.getElementById("scoreAutoUpdate");
@@ -39,20 +39,20 @@ class GuiSettings {
         this.#introCheck.addEventListener("click", () => {
             this.save("allowIntro", this.isIntroChecked())
         });
-        this.#altArtCheck.addEventListener("click", () => {this.toggleAltArt()});
+        // this.#altArtCheck.addEventListener("click", () => {this.toggleAltArt()});
 
         // vs screen listeners
-        this.#HDCheck.addEventListener("click", () => {this.toggleHD()});
-        this.#noLoACheck.addEventListener("click", () => {this.toggleNoLoA()});
+        // this.#HDCheck.addEventListener("click", () => {this.toggleHD()});
+        // this.#noLoACheck.addEventListener("click", () => {this.toggleNoLoA()});
 
         // gui settings listeners
-        this.#wsCheck.addEventListener("click", () => {
+        /* this.#wsCheck.addEventListener("click", () => {
             if (inside.electron) {
                 this.toggleWs();
             } else {
                 this.sendWsToggle();
             }            
-        });
+        }); */
         this.#customRound.addEventListener("click", () => {this.toggleCustomRound()});
         this.#forceWLCheck.addEventListener("click", () => {this.toggleForceWL()});
         this.#scoreAutoCheck.addEventListener("click", () => {
@@ -98,14 +98,14 @@ class GuiSettings {
 
         // and update it all!
         this.#introCheck.checked = guiSettings.allowIntro;
-        this.#altArtCheck.checked = guiSettings.forceAlt;
+        // this.#altArtCheck.checked = guiSettings.forceAlt;
 
-        this.#HDCheck.checked = guiSettings.forceHD;
-        if (guiSettings.forceHD) this.#noLoACheck.disabled = false;
-        this.#noLoACheck.checked = guiSettings.noLoAHD;
+        // this.#HDCheck.checked = guiSettings.forceHD;
+        // if (guiSettings.forceHD) this.#noLoACheck.disabled = false;
+        // this.#noLoACheck.checked = guiSettings.noLoAHD;
 
-        this.#wsCheck.checked = guiSettings.workshop;
-        if (guiSettings.workshop) this.#altArtCheck.disabled = false;
+        // this.#wsCheck.checked = guiSettings.workshop;
+        // if (guiSettings.workshop) this.#altArtCheck.disabled = false;
         if (guiSettings.customRound) this.#customRound.click();
         if (guiSettings.forceWL) this.#forceWLCheck.click();
         this.#scoreAutoCheck.checked = guiSettings.scoreAutoUpdate;
@@ -150,7 +150,7 @@ class GuiSettings {
         return this.#introCheck.checked;
     }
 
-    setAltArt(value) {
+    /* setAltArt(value) {
         this.#altArtCheck.checked = value;
     }
     isAltArtChecked() {
@@ -169,9 +169,9 @@ class GuiSettings {
 
         await Promise.all(promises);
 
-    }
+    } */
 
-    setHD(value) {
+    /* setHD(value) {
         this.#HDCheck.checked = value;
     }
     isHDChecked() {
@@ -218,9 +218,9 @@ class GuiSettings {
         // save current checkbox value to the settings file
         this.save("noLoAHD", this.isNoLoAChecked());
 
-    }
+    } */
 
-    setWs(value) {
+    /* setWs(value) {
         this.#wsCheck.checked = value;
     }
     isWsChecked() {
@@ -248,12 +248,12 @@ class GuiSettings {
         // save current checkbox value to the settings file
         await this.save("workshop", this.isWsChecked());
 
-    }
+    } */
     /** Will send a signal to the GUI to toggle current WS values */
-    async sendWsToggle() {
+    /* async sendWsToggle() {
         const remote = await import("./Remote Requests.mjs");
         remote.sendRemoteData({message: "toggleWs", value: this.isWsChecked()});
-    }
+    } */
 
     setForceWL(value) {
         this.#forceWLCheck.checked = value;

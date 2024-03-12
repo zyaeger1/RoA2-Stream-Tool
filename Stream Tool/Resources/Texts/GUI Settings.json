@@ -1,11 +1,7 @@
 {
-  "guiWidth": 600,
-  "guiHeight": 300,
+  "guiWidth": 613,
+  "guiHeight": 315,
   "allowIntro": false,
-  "workshop": false,
-  "forceAlt": false,
-  "forceHD": false,
-  "noLoAHD": false,
   "forceWL": false,
   "customRound": false,
   "invertScore": false,

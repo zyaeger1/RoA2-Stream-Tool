@@ -118,13 +118,6 @@ ipc.on('remoteGuiData', async (event, data) => {
         await playerFinder.setPlayerPresets();
         await commFinder.setCasterPresets();
         
-    } else if (jsonData.message == "toggleWs") {
-
-        // when a remote GUI clicks on the workshop toggle
-        settings.setWs(jsonData.value);
-        await settings.toggleWs();
-        ipc.send("sendData", JSON.stringify({id: "remoteGUI", message: "toggleWs"}, null, 2));
-    
     } else if (jsonData.message == "remoteBracket") {
 
         // yep you guessed it

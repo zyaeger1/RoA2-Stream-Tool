@@ -80,13 +80,13 @@ export class PlayerCharacter {
 
             // since most images are large pixel arts, only do regular
             // rendering if skin name includes "HD" on it
-            if (data.skin.includes("HD")) {
-                this.#charEl.style.imageRendering = "auto"; // default scalling
-                this.#trailEl.style.imageRendering = "auto";
-            } else {
+            /* if (data.skin.includes("HD")) {
                 this.#charEl.style.imageRendering = "pixelated"; // pixel art scalling
                 this.#trailEl.style.imageRendering = "pixelated";
-            }
+            } else { */
+                this.#charEl.style.imageRendering = "auto"; // default scalling
+                this.#trailEl.style.imageRendering = "auto";
+            // }
 
             // here we will store promises to use later
             const charsLoaded = [];
