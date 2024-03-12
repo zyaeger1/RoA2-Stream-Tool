@@ -93,11 +93,11 @@ export class PlayerGame extends Player {
         this.vsSkin = skin;
 
         // update the text of the skin selector
-        if (skin.customImg) {
+        /* if (skin.customImg) {
             this.skinSel.innerHTML = "Custom " + skin.name;
-        } else {
+        } else { */
             this.skinSel.innerHTML = skin.name;
-        }
+        // }
 
         // store custom skin data
         this.skinHex = skin.hex;
@@ -205,7 +205,7 @@ export class PlayerGame extends Player {
         let vsBG = `${this.char}/BG.webm`;
         let trueBGPath = stPath.char;
 
-        if (this.vsSkin.name.includes("LoA") && !settings.isNoLoAChecked()) {
+        /* if (this.vsSkin.name.includes("LoA") && !settings.isNoLoAChecked()) {
             // show LoA background if the skin is LoA
             vsBG = 'BG LoA.webm';
             trueBGPath = stPath.charBase;;
@@ -220,7 +220,7 @@ export class PlayerGame extends Player {
             if (this.charInfo.vsScreen.background) { // if the character has a specific BG
                 vsBG = `${this.charInfo.vsScreen.background}/BG.webm`;
             }
-        }
+        } */
 
         // if it doesnt exist, use a default BG
         if (!await fileExists(`${trueBGPath}/${vsBG}`)) {
