@@ -1129,6 +1129,22 @@ button:hover {
   background-color: var(--focused);
 }
 
+.pselectDropDown {
+  border-color: var(--selected);
+  height: 30px;
+  width: 100px;
+  color: var(--text1);
+  background: var(--bg4);
+  transition: border-color 100ms;
+  box-sizing: border-box;
+}
+.pselectDropDown:hover {
+  border-color: var(--selected);
+}
+.pselectDropDown:active {
+  background-color: var(--bg2);
+}
+
 
 /* Custom skin menu */
 /* #customSkinDiv {
