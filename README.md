@@ -26,7 +26,7 @@ So you want to do a Project+ stream, huh? Well, today is your lucky day, because
 
 ## How to setup
 These are instructions for **OBS Studio**:
-- Get the [latest release](https://github.com/ilikepizza107/Project-Plus-Stream-Control/releases).
+- Get the [latest release](https://github.com/ilikepizza107/Project-Plus-Stream-Tool/releases).
 - Extract somewhere.
 - Drag and drop `16.9 Scoreboard.html` or `4.3 Scoreboard.html` into OBS, or add a new browser source in OBS pointing at the local file.
   - If the source looks weird, manually set the source's properties to 1920 width and 1080 height, or set your OBS canvas resolution to 1080p, or make the source fit the screen (Ctrl+F).
