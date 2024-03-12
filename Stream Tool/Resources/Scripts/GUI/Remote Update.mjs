@@ -1,7 +1,7 @@
 import { bestOf } from "./BestOf.mjs";
 import { addCaster, casters } from "./Caster/Casters.mjs";
 import { currentColors, updateColor } from "./Colors.mjs";
-// import { customChange, setCurrentPlayer } from "./Custom Skin.mjs";
+import { customChange, setCurrentPlayer } from "./Custom Skin.mjs";
 import { gamemode } from "./Gamemode Change.mjs";
 import { displayNotif } from "./Notifications.mjs";
 import { players } from "./Player/Players.mjs";
@@ -65,12 +65,12 @@ export async function updateGUI(data) {
         // player character and skin
         if (data.player[i].char != players[i].char || data.player[i].skin != players[i].skin.name) {
             await players[i].charChange(data.player[i].char, true);
-            /* if (data.player[i].customImg) {
+            if (data.player[i].customImg) {
                 setCurrentPlayer(players[i]);
                 await customChange(data.player[i].skinHex, data.player[i].skin);
-            } else { */
+            } else {
                 await players[i].skinChange(players[i].findSkin(data.player[i].skin));
-            // }
+            }
         }
 
     };

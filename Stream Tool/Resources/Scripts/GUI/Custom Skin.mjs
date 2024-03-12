@@ -1,4 +1,4 @@
-/* import { Player } from "./Player/Player.mjs";
+import { Player } from "./Player/Player.mjs";
 import { viewport } from "./Viewport.mjs";
 
 // set listeners for the custom skins menu
@@ -19,7 +19,7 @@ let curPlayer;
  * Shows up the custom skin menu
  * @param {Player} player - Player that requested a custom color change
  */
-/* export function showCustomSkin(player) {
+export function showCustomSkin(player) {
 
     // store the current active player
     curPlayer = player;
@@ -48,7 +48,7 @@ let curPlayer;
 }
 
 /** Hides the custom skin menu */
-/* function hideCustomSkin() {
+function hideCustomSkin() {
     customSkinDiv.style.pointerEvents = "none";
     customSkinDiv.style.opacity = 0;
     customSkinDiv.style.transform = "scale(1.15)";
@@ -56,7 +56,7 @@ let curPlayer;
 }
 
 /** Updates the custom skin dropdown with current character data */
-/* function updateCustomSelect() {
+function updateCustomSelect() {
 
     // clear current data
     customSkinSelect.innerHTML = "";
@@ -84,7 +84,7 @@ let curPlayer;
  * Adds a new value to the custom skin select
  * @param {String} text - Entry text
  */
-/* function addCustomEntry(text) {
+function addCustomEntry(text) {
     const entry = document.createElement("option");
     entry.text = text;
     entry.value = text;
@@ -96,7 +96,7 @@ let curPlayer;
  * @param {String} hex - Optional color code forcing
  * @param {String} skinName - Optional custom img forcing
  */
-/* export async function customChange(hex, skinName) {
+export async function customChange(hex, skinName) {
 
     // grab the original skin's values and change them up
     const skin = structuredClone(curPlayer.findSkin(skinName || customSkinSelect.value));
@@ -117,13 +117,13 @@ let curPlayer;
  * Sets the current player to add a custom skin to
  * @param {Player} player - Player to use
  */
-/* export function setCurrentPlayer(player) {
+export function setCurrentPlayer(player) {
     curPlayer = player;
 }
 
 customSkinSelect.addEventListener("change", () => {resizeCustomSelect()});
 /** Determines the width of only the current selected value */
-/* function resizeCustomSelect() {
+function resizeCustomSelect() {
     const tempOption = document.createElement('option');
     tempOption.textContent = customSkinSelect.value;
 
@@ -135,4 +135,4 @@ customSkinSelect.addEventListener("change", () => {resizeCustomSelect()});
     customSkinSelect.after(tempSelect);
     customSkinSelect.style.width = `${+tempSelect.clientWidth + 12}px`;
     tempSelect.remove();
-} */
+}
