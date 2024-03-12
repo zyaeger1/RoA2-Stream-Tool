@@ -40,7 +40,7 @@ Repeat from the 3rd step to add the `VS Screen.html` and `Bracket.html` views, t
 - Press either `F1` or `F2` to increase P1's or P2's score.
 - Press `ESC` to clear player info*.
 
-** *Functionallity may change in some menus to ease workflow. **
+***Functionallity may change in some menus to ease workflow.**
 
 For developing, there are some shorcuts to make things easier:
 - Press `F5` to reload the GUI.
