@@ -263,7 +263,7 @@ class PlayerFinder extends Finder {
                 skinImgs[i].char,
                 skin,
                 finalColorData,
-                "Skins",
+                "Icons",
                 "P2"
             );
             skinImgs[i].el.setAttribute('src', finalSrc);
