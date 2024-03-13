@@ -105,9 +105,9 @@ export class Team {
      * Gets this team's state class
      * @returns {TeamState}
      */
-        state() {
-            return this.#tState;
-        }
+    state() {
+        return this.#tState;
+    }
 
     /**
      * Updates team data (name, W/L, color and score)

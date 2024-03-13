@@ -28,19 +28,7 @@ export class TeamState {
     async update() {
 
         let nameState = "";
-
-        if (gamemode.getGm() == 1) {
-
-            // if gamemode is singles, we will use the first player's tag
             nameState = players.player(this.#side).name().getTag();
-
-            
-        } else {
-
-            // if doubles, we will use the team name
-            nameState = teams.team(this.#side).name().getName();
-            
-        }
 
         // if the image to show changed
         if (this.#imgSrc != `Resources/SVGs/Flags/${nameState}.svg`) {
