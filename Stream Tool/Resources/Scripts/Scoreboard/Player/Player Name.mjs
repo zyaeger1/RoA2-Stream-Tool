@@ -19,17 +19,22 @@ export class PlayerName {
     #tagEl;
     #wrapperEl;
 
+    #stateImg;
+    #imgSrc;
+
     #side = false;
 
     /**
-     * Controls the player's name and tags
+     * Controls the player's name and tags + state
      * @param {HTMLElement} nameEl - Name element
      * @param {HTMLElement} tagEl - Tag element
+     * @param {HTMLElement} stateImg - state image element
      * @param {Number} id - Player Slot
      */
-    constructor(nameEl, tagEl, id) {
+    constructor(nameEl, tagEl, stateImg, id) {
         this.#nameEl = nameEl;
         this.#tagEl = tagEl;
+        this.#stateImg = stateImg;
         this.#wrapperEl = nameEl.parentElement;
         // this determines the direction of fade movements
         this.#side = !(id % 2 == 0);
@@ -69,16 +74,28 @@ export class PlayerName {
 
     }
 
+    getState() {
+        return this.#stateImg;
+    }
+
     /**
-     * Update player name and tag, fading them out and in
+     * Update player name and tag + state, fading them out and in
      * @param {String} name - Name of the player
      * @param {String} tag - Tag of the player
+     * @param {String} state - The player's state
      */
-    async update(name, tag) {
+    async update(name, tag, state) {
 
         // update internal variables
         this.#name = name;
         this.#tag = tag;
+                
+        // if the image to show changed
+        if (this.#imgSrc != `Resources/SVGs/Flags/${state}.svg`) {
+
+            // store for later
+            this.#imgSrc = `Resources/SVGs/Flags/${state}.svg`;
+        }
 
         let delayTime = current.delay;
 
@@ -90,6 +107,7 @@ export class PlayerName {
             // wait for the fadeout to proceed
             if (gamemode.getGm() == 2) {
                 await fadeOut(this.#wrapperEl, fadeOutTimeSc);
+                await fadeOut(this.#stateImg, fadeOutTimeSc);
             } else {
                 await fadeOutMove(this.#wrapperEl, null, this.#side);
             }
@@ -99,17 +117,25 @@ export class PlayerName {
         // update them texts
         this.#setName(name);
         this.#setTag(tag);
+        this.#stateImg.src = this.#imgSrc;
         resizeText(this.#wrapperEl);
 
         // and fade everything in!
         if (this.getName() || this.getTag()) { // only if theres content
             if (gamemode.getGm() == 2) {
-                fadeIn(this.#wrapperEl, fadeInTimeSc, delayTime)
+                fadeIn(this.#wrapperEl, fadeInTimeSc, delayTime);
+                fadeIn(this.#stateImg, fadeInTimeSc, delay + .35);
             } else {
                 fadeInMove(this.#wrapperEl, null, this.#side, delayTime);
             }
             
         }
+
+        if (state) {
+            this.#stateImg.style.display = "inline";
+          } else {
+            this.#stateImg.style.display = "none";
+          }
 
     }
 
@@ -158,7 +184,8 @@ export class PlayerName {
     /** Displays the text wrapper, fading it in */
     show() {
         if (gamemode.getGm() == 2) {
-            fadeIn(this.#wrapperEl, fadeInTimeSc, current.delay)
+            fadeIn(this.#wrapperEl, fadeInTimeSc, current.delay);
+            fadeIn(this.#stateImg, fadeInTimeSc, current.delay + .35);
         } else {
             fadeInMove(this.#wrapperEl, null, this.#side, current.delay);
         }
