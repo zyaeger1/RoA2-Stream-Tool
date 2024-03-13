@@ -120,9 +120,10 @@ body {
 }
 
 .states {
-    max-width: 36px;
-    max-height: 36px;
-    top: 33px;
+    position: relative;
+    top: 1px;
+    max-width: 30px;
+    max-height: 30px;
     object-fit: scale-down;
 }
 
