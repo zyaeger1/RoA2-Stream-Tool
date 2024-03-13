@@ -3,6 +3,7 @@ import { teams } from "./Team/Teams.mjs";
 
 const r = document.querySelector(':root');
 const tLogoImg = document.getElementsByClassName("tLogos");
+const tStateImg = document.getElementsByClassName("tStates");
 const nameBg = document.getElementsByClassName("nameBg");
 
 class Gamemode {
