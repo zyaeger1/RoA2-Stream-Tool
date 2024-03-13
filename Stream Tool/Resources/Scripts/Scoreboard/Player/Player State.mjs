@@ -53,24 +53,12 @@ export class PlayerState {
 
         }
 
-    }
+        if (state) {
+            this.#stateImg.style.display = "inline";
+          } else {
+            this.#stateImg.style.display = "none";
+          }
 
-    /**
-     * Updates image position depending on the gamemode
-     * @param {Number} gamemode - Gamemode to change to
-     */
-    changeGm(gamemode) {
-
-        if (gamemode == 2) { // doubles
-            
-            this.#stateImg.style.top = "65px";
-
-        } else { // singles
-
-            this.#stateImg.style.top = "33px";
-            
-        }
-        
     }
 
     /** Shows the state image */
