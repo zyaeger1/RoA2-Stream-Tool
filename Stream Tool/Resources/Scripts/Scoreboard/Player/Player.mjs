@@ -1,9 +1,14 @@
+import { fadeIn } from "../../Utils/Fade In.mjs";
+import { fadeOut } from "../../Utils/Fade Out.mjs";
+import { current } from "../../Utils/Globals.mjs";
 import { PlayerCharacter } from "./Player Character.mjs";
 import { PlayerName } from "./Player Name.mjs";
 import { PlayerInfo } from "./Player Pronouns.mjs";
 
 export class Player {
 
+    #pState;
+    #simgSrc;
     #pName;
     #pProns;
     #pChar;
@@ -13,14 +18,16 @@ export class Player {
      * @param {HTMLElement} wrapEl - Wrapper containing name and tag
      * @param {HTMLElement} pronEl - Element containing player pronouns
      * @param {HTMLElement} charEl - Element containing character image
+     * @param {HTMLElement} stateEl - Wrapper containing player state
      * @param {Number} id - Player slot
      */
     constructor(wrapEl, pronEl, charEl, id) {
 
-        // player name and tag
+        // player name and tag and state
         const nameEl = wrapEl.getElementsByClassName("names")[0];
         const tagEl = wrapEl.getElementsByClassName("tags")[0];
-        this.#pName = new PlayerName(nameEl, tagEl, id);
+        const stateEl = wrapEl.getElementsByClassName("state")[0];
+        this.#pName = new PlayerName(nameEl, tagEl, stateEl, id);
 
         // player info
         this.#pProns = new PlayerInfo(pronEl, id);
@@ -66,6 +73,39 @@ export class Player {
             this.#pName.update(name, tag);
         }
 
+    }
+
+    /**
+     * Update player states, fading them out and in
+     * @param {String} state - State of the player
+     */
+    async updateState() {
+
+        let stateName = "";
+
+        // if the image to show changed
+        if (this.#simgSrc != `Resources/SVGs/Flags/${stateName}.svg`) {
+
+            // store for later
+            this.#simgSrc = `Resources/SVGs/Flags/${stateName}.svg`;
+
+            // delay for fadein animation
+            let delay = current.delay;
+
+            // if we aint loading the view, hide the logo
+            if (!current.startup) {
+                delay = 0;
+                await fadeOut(this.#pState, fadeOutTimeSc);
+            }
+
+            // update the actual image
+            this.#pState.src = this.#simgSrc;
+
+            // and fade it in
+            fadeIn(this.#pState, fadeInTimeSc, delay + .35);
+            
+
+        }
     }
 
     /**

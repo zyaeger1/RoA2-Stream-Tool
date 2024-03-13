@@ -49,6 +49,9 @@ class Players {
             // update player name and tag
             this.#players[i].updateName(data[i].name, data[i].tag);
 
+            // update state
+            this.#players[i].updateState(data[i].state);
+
             // update pronouns
             this.#players[i].updatePronouns(data[i].pronouns);
 
