@@ -29,14 +29,11 @@ export class PlayerState {
      */
     async update(state) {
 
-        let statePath = "";
-            statePath = players.player.getState();
-
         // if the image to show changed
-        if (this.#imgSrc != `Resources/SVGs/Flags/${statePath}.svg`) {
+        if (this.#imgSrc != `Resources/SVGs/Flags/${state}.svg`) {
 
             // store for later
-            this.#imgSrc = `Resources/SVGs/Flags/${statePath}.svg`;
+            this.#imgSrc = `Resources/SVGs/Flags/${state}.svg`;
 
             // delay for fadein animation
             let delay = current.delay;
