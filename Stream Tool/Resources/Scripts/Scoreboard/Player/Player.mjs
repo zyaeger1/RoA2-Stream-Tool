@@ -64,8 +64,8 @@ export class Player {
     }
 
     /**
-     * Gets this player's character state
-     * @returns {PlayerCharacter}
+     * Gets this player's state class
+     * @returns {PlayerState}
      */
     state() {
         return this.#pState;
@@ -99,15 +99,15 @@ export class Player {
 
     /**
      * Updates the displayed player state
-     * @param {String} state - The player's pronouns
+     * @param {String} state - The player's state
      */
-        updateState(state) {
+    updateState(state) {
 
-            if (this.#pState.getState() != state) {
-                this.#pState.update(state);
-            }
-    
+        if (this.#pState.getState() != state) {
+            this.#pState.update(state);
         }
+
+    }
 
     /**
      * Updates all player's character elements

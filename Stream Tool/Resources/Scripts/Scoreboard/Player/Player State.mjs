@@ -19,16 +19,24 @@ export class PlayerState {
 
     }
 
-    async update() {
+    getState() {
+        return this.#stateImg;
+    }
 
-        let nameState = "";
-            nameState = players.player.name().getTag();
+    /**
+     * Updates the displayed player state
+     * @param {String} state - The player's state
+     */
+    async update(state) {
+
+        let statePath = "";
+            statePath = players.player.getState();
 
         // if the image to show changed
-        if (this.#imgSrc != `Resources/SVGs/Flags/${nameState}.svg`) {
+        if (this.#imgSrc != `Resources/SVGs/Flags/${statePath}.svg`) {
 
             // store for later
-            this.#imgSrc = `Resources/SVGs/Flags/${nameState}.svg`;
+            this.#imgSrc = `Resources/SVGs/Flags/${statePath}.svg`;
 
             // delay for fadein animation
             let delay = current.delay;
