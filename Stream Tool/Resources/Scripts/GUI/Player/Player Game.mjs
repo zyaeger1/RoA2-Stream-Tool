@@ -68,8 +68,8 @@ export class PlayerGame extends Player {
     getState() {
         return this.state;
     }
-    setState(text) {
-        return this.state;
+    setState(state) {
+        return this.state = state;
     }
     getTag() {
         return this.tag;

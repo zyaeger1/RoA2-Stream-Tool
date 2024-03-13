@@ -64,9 +64,6 @@ class ProfileInfo {
         noneOption.style.backgroundColor = "var(--bg5)";
         this.#flagSelect.appendChild(noneOption);
 
-        // function to call when selecting an option
-        this.#flagSelect.addEventListener("change", () => {this.updateSelect()});
-
     }
 
     /**

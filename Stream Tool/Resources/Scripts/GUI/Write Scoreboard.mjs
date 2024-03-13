@@ -94,6 +94,7 @@ export async function writeScoreboard() {
             pronouns: players[i].pronouns,
             tag: players[i].tag,
             name: players[i].getName(),
+            state: players[i].state,
             socials: players[i].getSocials(),
             sc : {
                 charImg: players[i].scBrowserSrc || players[i].scSrc,

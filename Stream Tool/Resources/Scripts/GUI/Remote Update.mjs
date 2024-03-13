@@ -61,6 +61,7 @@ export async function updateGUI(data) {
         players[i].setTag(data.player[i].tag);
         players[i].setPronouns(data.player[i].pronouns);
         players[i].setSocials(data.player[i].socials);
+        players[i].setState(data.player[i].state);
 
         // player character and skin
         if (data.player[i].char != players[i].char || data.player[i].skin != players[i].skin.name) {

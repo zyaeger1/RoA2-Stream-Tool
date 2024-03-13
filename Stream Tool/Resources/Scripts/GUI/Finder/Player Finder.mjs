@@ -103,6 +103,7 @@ class PlayerFinder extends Finder {
                             name : preset.name,
                             tag : preset.tag,
                             pronouns : preset.pronouns,
+                            state : preset.state,
                             socials : preset.socials,
                             char : preset.characters[i].character,
                             skin : preset.characters[i].skin,
@@ -178,6 +179,7 @@ class PlayerFinder extends Finder {
                         name : preset.name,
                         tag : preset.tag,
                         pronouns : preset.pronouns,
+                        state : preset.state,
                         socials : preset.socials,
                         char : "Random",
                         skin : {name: "Default"}
@@ -288,6 +290,7 @@ class PlayerFinder extends Finder {
         // this will exclude bracket players
         if (player.profileType == "player") {
             player.setPronouns(pData.pronouns);
+            player.setState(pData.state);
             player.setSocials(pData.socials);
         }
 
