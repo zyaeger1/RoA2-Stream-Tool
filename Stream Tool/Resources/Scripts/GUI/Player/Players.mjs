@@ -38,6 +38,7 @@ export function clearPlayers() {
         players[i].pronouns = "";
         players[i].setTag("");
         players[i].socials = {};
+        players[i].state = "";
 
         //reset characters to random
         players[i].charChange("Random");
