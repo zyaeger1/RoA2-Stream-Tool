@@ -2,7 +2,6 @@ import { fadeInMove } from "../../Utils/Fade In.mjs";
 import { current } from "../../Utils/Globals.mjs";
 import { TeamColor } from "./Team Color.mjs";
 import { TeamLogo } from "./Team Logo.mjs";
-import { TeamState } from "./Team State.mjs";
 import { TeamName } from "./Team Name.mjs";
 import { TeamScore } from "./Team Score.mjs";
 import { TeamTopBar } from "./Team Top Bar.mjs";
@@ -17,7 +16,6 @@ export class Team {
     #tColor;
     #tScore;
     #tLogo;
-    #tState;
 
     /**
      * Controls name, color and score info for a team
@@ -49,15 +47,12 @@ export class Team {
 
         const logoImg = scoreboardEl.getElementsByClassName("tLogos")[0];
 
-        const stateImg = scoreboardEl.getElementsByClassName("tStates")[0];
-
         // and create those internal classes
         this.#tName = new TeamName(nameEl, nameBg, side);
         this.#tTopBar = new TeamTopBar(topBar);
         this.#tColor = new TeamColor(cssRoot, colorImg, side);
         this.#tScore = new TeamScore(scoreImg, scoreNum, scoreAnim, scoreGrad, scoreBordder);
         this.#tLogo = new TeamLogo(logoImg, side);
-        this.#tState = new TeamState(stateImg, side);
 
     }
 
@@ -102,14 +97,6 @@ export class Team {
     }
 
     /**
-     * Gets this team's state class
-     * @returns {TeamState}
-     */
-    state() {
-        return this.#tState;
-    }
-
-    /**
      * Updates team data (name, W/L, color and score)
      * @param {String} name - Team's name
      * @param {String} name - Team's W/L status
@@ -129,7 +116,6 @@ export class Team {
         this.#tColor.update(color);
         this.#tScore.update(score);
         this.#tLogo.update();
-        this.#tState.update();
 
     }
 
@@ -163,7 +149,6 @@ export class Team {
         this.#tName.show();
         this.#tTopBar.show(current.delay+.6);
         this.#tLogo.show();
-        this.#tState.show();
 
         fadeInMove(this.#scoreboardEl, null, this.#side, current.delay-.1);
         this.#scoreboardEl.style.display = "block";

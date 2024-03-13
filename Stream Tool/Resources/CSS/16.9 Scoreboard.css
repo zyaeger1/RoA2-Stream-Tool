@@ -119,7 +119,7 @@ body {
     color: lightgray;
 }
 
-.state {
+.states {
     max-width: 36px;
     max-height: 36px;
     top: 33px;
@@ -535,19 +535,6 @@ man i hate chromium
     left: 248px;
 }
 #tagLogoP2 {
-    right: 248px;
-}
-
-.tStates {
-    max-width: 36px;
-    max-height: 36px;
-    top: 33px;
-    object-fit: scale-down;
-}
-#stateP1 {
-    left: 248px;
-}
-#stateP2 {
     right: 248px;
 }
 

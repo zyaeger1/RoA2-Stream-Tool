@@ -1,34 +1,28 @@
 import { fadeIn } from "../../Utils/Fade In.mjs";
 import { fadeOut } from "../../Utils/Fade Out.mjs";
 import { current } from "../../Utils/Globals.mjs";
-import { gamemode } from "../Gamemode Change.mjs";
 import { players } from "../Player/Players.mjs";
 import { fadeInTimeSc, fadeOutTimeSc } from "../ScGlobals.mjs";
-import { teams } from "./Teams.mjs";
 
-export class TeamState {
+export class PlayerState {
 
     #stateImg;
     #imgSrc;
 
-    #side;
-
     /**
-     * Controls the state for a team
+     * Controls the state for a player
      * @param {HTMLElement} stateImg - state image element
-     * @param {String} side - L for left, R for right
      */
-    constructor(stateImg, side) {
+    constructor(stateImg) {
 
         this.#stateImg = stateImg;
-        this.#side = side == "L" ? 0 : 1; // for player/team slot
 
     }
 
     async update() {
 
         let nameState = "";
-            nameState = players.player(this.#side).name().getTag();
+            nameState = players.player.name().getTag();
 
         // if the image to show changed
         if (this.#imgSrc != `Resources/SVGs/Flags/${nameState}.svg`) {
@@ -65,20 +59,10 @@ export class TeamState {
         if (gamemode == 2) { // doubles
             
             this.#stateImg.style.top = "65px";
-            if (this.#side) { // right side
-                this.#stateImg.style.right = "352px";
-            } else { // left side
-                this.#stateImg.style.left = "352px";
-            }
 
         } else { // singles
 
             this.#stateImg.style.top = "33px";
-            if (this.#side) { // right side
-                this.#stateImg.style.right = "248px";
-            } else { // left side
-                this.#stateImg.style.left = "248px";
-            }
             
         }
         
@@ -88,5 +72,4 @@ export class TeamState {
     show() {
         fadeIn(this.#stateImg, fadeInTimeSc, current.delay + .35);
     }
-
 }
