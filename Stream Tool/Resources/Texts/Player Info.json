@@ -3,6 +3,7 @@
     "name": "Test",
     "tag": "One",
     "pronouns": "Pronouns",
+    "state": "",
     "socials": {
       "twitter": "Twitter",
       "twitch": "Twich",

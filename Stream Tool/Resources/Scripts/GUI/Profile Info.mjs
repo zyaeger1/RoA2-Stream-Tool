@@ -5,6 +5,8 @@ import { stPath } from "./Globals.mjs";
 import { playerFinder } from "./Finder/Player Finder.mjs";
 import { commFinder } from "./Finder/Comm Finder.mjs";
 
+const flagList = await getJson(stPath.text + "/Flag Names");
+
 class ProfileInfo {
 
     #pInfoDiv = document.getElementById("pInfoDiv");
@@ -16,6 +18,7 @@ class ProfileInfo {
     #pronounsInp = document.getElementById("pInfoInputPronouns");
     #tagInp = document.getElementById("pInfoInputTag");
     #nameInp = document.getElementById("pInfoInputName");
+    #flagSelect = document.getElementById('pInfoInputState');
     #twitchInp = document.getElementById("pInfoInputTwitch");
     #ytInp = document.getElementById("pInfoInputYt");
     #twitterInp = document.getElementById("pInfoInputTwitter");
@@ -40,6 +43,30 @@ class ProfileInfo {
             this.hide();
         });
 
+        // create the flag select list
+        for (let i = 0; i < flagList.length; i++) {
+
+            const flagOption = document.createElement('option');
+            flagOption.value = flagList[i].name;
+            flagOption.innerHTML = flagList[i].name;
+
+            // add colors to the list
+            flagOption.style.backgroundColor = "var(--bg5)";
+            
+            this.#flagSelect.appendChild(flagOption);
+
+        }
+
+        // add in additional none option
+        const noneOption = document.createElement('option');
+        noneOption.value = "";
+        noneOption.innerHTML = "(none)";
+        noneOption.style.backgroundColor = "var(--bg5)";
+        this.#flagSelect.appendChild(noneOption);
+
+        // function to call when selecting an option
+        this.#flagSelect.addEventListener("change", () => {this.updateSelect()});
+
     }
 
     /**
@@ -63,6 +90,7 @@ class ProfileInfo {
         this.#pronounsInp.value = profile.getPronouns();
         this.#tagInp.value = profile.getTag();
         this.#nameInp.value = profile.getName();
+        this.#flagSelect.value = profile.getState();
         const socials = profile.getSocials() || [];
         this.#twitterInp.value = socials.twitter || "";
         this.#twitchInp.value = socials.twitch || "";
@@ -113,6 +141,7 @@ class ProfileInfo {
         this.#curProfile.pronouns = this.#pronounsInp.value;
         this.#curProfile.setTag(this.#tagInp.value);
         this.#curProfile.setName(this.#nameInp.value);
+        this.#curProfile.setState(this.#flagSelect.value);
 
         const socials = {
             twitter : this.#twitterInp.value,
@@ -132,6 +161,7 @@ class ProfileInfo {
             name: this.#curProfile.getName(),
             tag: this.#curProfile.getTag(),
             pronouns: this.#curProfile.getPronouns(),
+            state: this.#curProfile.getState(),
             socials: this.#curProfile.getSocials(),
         }
         if (this.#curProfile.profileType == "player") {

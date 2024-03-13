@@ -1,5 +1,5 @@
 import { viewport } from "./Viewport.mjs";
-import { charFinder } from "./Finder/Char Finder.mjs";
+// import { charFinder } from "./Finder/Char Finder.mjs";
 import { players } from "./Player/Players.mjs";
 import { wl } from "./WinnersLosers.mjs";
 import { inside, stPath } from "./Globals.mjs";

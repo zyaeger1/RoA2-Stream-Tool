@@ -14,6 +14,7 @@ export class PlayerGame extends Player {
 
     tag = "";
     pronouns = "";
+    state = "";
     socials = {};
 
     vsSkin;
@@ -63,6 +64,12 @@ export class PlayerGame extends Player {
     }
     setPronouns(text) {
         this.pronouns = text;
+    }
+    getState() {
+        return this.state;
+    }
+    setState(text) {
+        return this.state;
     }
     getTag() {
         return this.tag;
