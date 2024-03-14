@@ -22,7 +22,7 @@ class BracketPlayer {
         // assign the html elements to variables
         this.nameEl = document.getElementById(round).getElementsByClassName("playerName")[pos];
         this.tagEl = document.getElementById(round).getElementsByClassName("playerTag")[pos];
-        this.stateEl = document.getElementById(round).getElementsByClassName("playerState")[pos]
+        this.stateEl = document.getElementById(round).getElementsByClassName("playerState")[pos];
         this.charEl = document.getElementById(round).getElementsByClassName("playerIcon")[pos];
         this.scoreEl = document.getElementById(round).getElementsByClassName("score")[pos];
     
@@ -33,7 +33,7 @@ class BracketPlayer {
         // text update
         if (this.nameEl.innerHTML != bracketData[this.round][this.pos].name ||
         this.tagEl.innerHTML != bracketData[this.round][this.pos].tag ||
-        this.stateEl.innerHTML != bracketData[this.round][this.pos].state) {
+        this.stateEl.src != `Resources/SVGs/Flags/${bracketData[this.round][this.pos].state}.svg`) {
             this.updateName();
         }
 
@@ -59,7 +59,7 @@ class BracketPlayer {
             this.tagEl.style.fontSize = tagSize;
             this.tagEl.innerHTML = bracketData[this.round][this.pos].tag;
             this.stateEl.style = stateSize;
-            this.stateEl.innerHTML = bracketData[this.round][this.pos].state;
+            this.stateEl.src = `Resources/SVGs/Flags/${bracketData[this.round][this.pos].state}.svg`;
 
             // remove tag from flow if not visible
             if (this.tagEl.innerHTML == "") {
@@ -71,7 +71,7 @@ class BracketPlayer {
             }
 
             // remove state from flow if not visible
-            if (this.stateEl.innerHTML == "") {
+            if (this.stateEl.src == "") {
                 this.stateEl.style.display = "none";
                 this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
             } else {
