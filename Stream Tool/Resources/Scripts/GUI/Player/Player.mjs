@@ -211,7 +211,7 @@ export class Player {
                         this.charInfo.skinList[i],
                         this.charInfo.colorData,
                         "Icons",
-                        "P2"
+                        "Icon"
                     );
                     // preload it so the gui doesnt implode when loading 30 images at once
                     finalImg.decode().then(() => {

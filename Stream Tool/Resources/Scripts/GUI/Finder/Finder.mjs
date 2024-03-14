@@ -121,9 +121,9 @@ export class Finder {
                 charPos[2] = pos.gui.neutral.scale;
             }
         } else { //if the character isnt on the database, set positions for the "?" image
-            charPos[0] = 0;
+            charPos[0] = 4;
             charPos[1] = -5;
-            charPos[2] = 1.2;
+            charPos[2] = 0.7;
         }
     
         //to position the character

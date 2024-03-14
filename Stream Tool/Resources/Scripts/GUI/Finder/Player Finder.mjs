@@ -107,7 +107,7 @@ class PlayerFinder extends Finder {
                             socials : preset.socials,
                             char : preset.characters[i].character,
                             skin : preset.characters[i].skin,
-                            hex : preset.characters[i].hex,
+                            // hex : preset.characters[i].hex,
                             // customImg : preset.characters[i].customImg
                         }
 
@@ -130,7 +130,7 @@ class PlayerFinder extends Finder {
                             charJson : charJson,
                             char : preset.characters[i].character,
                             skin : preset.characters[i].skin,
-                            hex : preset.characters[i].hex,
+                            // hex : preset.characters[i].hex,
                             // customImg : preset.characters[i].customImg,
                         });
                         // we have to position it
@@ -196,7 +196,7 @@ class PlayerFinder extends Finder {
                         el : charImg,
                         charJson : charJson,
                         char : "Random",
-                        skin : {name: "Random"}
+                        skin : {name: "Default"}
                     });
                     this.positionCharImg(null, charImg, charJson);
                     charImgBox.appendChild(charImg);
@@ -266,7 +266,7 @@ class PlayerFinder extends Finder {
                 skin,
                 finalColorData,
                 "Icons",
-                "P2"
+                "Icon"
             );
             skinImgs[i].el.setAttribute('src', finalSrc);
 
