@@ -14,12 +14,11 @@ class Players {
             // gather the data needed for our classes
             const wrapEl = document.getElementById(`p${i+1}Wrapper`);
             const pronEl = document.getElementById(`p${i+1}Pronouns`);
-            const stateEl = document.getElementById(`p${i+1}State`);
             const charEl = document.getElementById(`p${i+1}Character`);
 
             // and create them
             this.#players.push(
-                new Player(wrapEl, pronEl, charEl, stateEl, i+1)
+                new Player(wrapEl, pronEl, charEl, i+1)
             );
 
         }
@@ -48,13 +47,10 @@ class Players {
         for (let i = 0; i < data.length; i++) {
 
             // update player name and tag
-            this.#players[i].updateName(data[i].name, data[i].tag);
+            this.#players[i].updateName(data[i].name, data[i].tag, data[i].state);
 
             // update pronouns
             this.#players[i].updatePronouns(data[i].pronouns);
-
-            //update state
-            this.#players[i].updateState(data[i].state);
 
             // update character
             charsLoaded.push(this.#players[i].updateChar(data[i].sc));

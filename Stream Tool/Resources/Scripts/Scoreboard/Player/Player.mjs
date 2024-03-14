@@ -4,21 +4,18 @@ import { current } from "../../Utils/Globals.mjs";
 import { PlayerCharacter } from "./Player Character.mjs";
 import { PlayerName } from "./Player Name.mjs";
 import { PlayerInfo } from "./Player Pronouns.mjs";
-import { PlayerState } from "./Player State.mjs";
 
 export class Player {
 
     #pName;
     #pProns;
     #pChar;
-    #pState;
 
     /**
      * Manages all info related to a player on the Scoreboard
      * @param {HTMLElement} wrapEl - Wrapper containing name and tag
      * @param {HTMLElement} pronEl - Element containing player pronouns
      * @param {HTMLElement} charEl - Element containing character image
-     * @param {HTMLElement} stateEl - Element containing player state
      * @param {Number} id - Player slot
      */
     constructor(wrapEl, pronEl, charEl, stateEl, id) {
@@ -26,16 +23,14 @@ export class Player {
         // player name and tag and state
         const nameEl = wrapEl.getElementsByClassName("names")[0];
         const tagEl = wrapEl.getElementsByClassName("tags")[0];
-        this.#pName = new PlayerName(nameEl, tagEl, id);
+        const stateImg = wrapEl.getElementsByClassName("states")[0];
+        this.#pName = new PlayerName(nameEl, tagEl, stateImg, id);
 
         // player info
         this.#pProns = new PlayerInfo(pronEl, id);
 
         // player character
         this.#pChar = new PlayerCharacter(charEl);
-
-        //player state
-        this.#pState = new PlayerState(stateEl, id);
 
     }
 
@@ -64,23 +59,15 @@ export class Player {
     }
 
     /**
-     * Gets this player's state class
-     * @returns {PlayerState}
-     */
-    state() {
-        return this.#pState;
-     }
-
-    /**
      * Update player name and tag, fading them out and in
      * @param {String} name - Name of the player
      * @param {String} tag - Tag of the player
      */
-    updateName(name, tag) {
+    updateName(name, tag, state) {
 
         // if either name or tag do not match
-        if (name != this.#pName.getName() || tag != this.#pName.getTag()) {
-            this.#pName.update(name, tag);
+        if (name != this.#pName.getName() || tag != this.#pName.getTag() || state != this.#pName.getState()) {
+            this.#pName.update(name, tag, state);
         }
 
     }
@@ -93,18 +80,6 @@ export class Player {
 
         if (this.#pProns.getPronouns() != pronouns) {
             this.#pProns.update(pronouns);
-        }
-
-    }
-
-    /**
-     * Updates the displayed player state
-     * @param {String} state - The player's state
-     */
-    updateState(state) {
-
-        if (this.#pState.getState() != state) {
-            this.#pState.update(state);
         }
 
     }
