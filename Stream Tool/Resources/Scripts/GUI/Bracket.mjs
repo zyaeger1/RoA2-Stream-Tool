@@ -104,7 +104,7 @@ async function createEncounters(sameRound) {
             // add colors to the list
             flagOption.style.backgroundColor = "var(--bg5)";
             
-            this.stateInp.appendChild(flagOption);
+            stateInp.appendChild(flagOption);
 
         }
 
@@ -113,10 +113,10 @@ async function createEncounters(sameRound) {
         noneOption.value = "";
         noneOption.innerHTML = "(none)";
         noneOption.style.backgroundColor = "var(--bg5)";
-        this.stateInp.appendChild(noneOption);
+        stateInp.appendChild(noneOption);
 
         // function to call when selecting an option
-        this.stateInp.addEventListener("change", () => {this.updateBracket()});
+        stateInp.addEventListener("change", () => {this.updateBracket()});
         bracketPlayers[i].stateInp = stateInp;
 
         // score
