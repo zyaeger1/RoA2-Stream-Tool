@@ -127,6 +127,14 @@ body {
     color: lightgray;
 }
 
+.states {
+    position: relative;
+    top: 1px;
+    max-width: 30px;
+    max-height: 30px;
+    object-fit: scale-down;
+}
+
 .teamName {
     position: absolute;
     width: 275px;
@@ -536,7 +544,7 @@ man i hate chromium
     left: 248px;
 }
 #tagLogoP2 {
-    right: 248px;
+    right: 40px;
 }
 
 
