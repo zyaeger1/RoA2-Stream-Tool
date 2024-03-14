@@ -1,10 +1,14 @@
+import { getJson } from "../File System.mjs";
+import { stPath } from "../Globals.mjs";
 import { Player } from "./Player.mjs";
+
+const flagList = await getJson(stPath.text + "/Flag Names");
 
 export class PlayerBracket extends Player {
 
     tagInp;
     charDiv;
-    stateInp;
+    stateSel;
     iconBrowserSrc;
     scoreInp;
 
@@ -13,6 +17,7 @@ export class PlayerBracket extends Player {
         super(id);
 
         this.charDiv = this.createCharSelects();
+        this.stateSel = this.createStateSelects();
 
     }
 
@@ -33,12 +38,6 @@ export class PlayerBracket extends Player {
     }
     setScore(score) {
         this.scoreInp.value = score == "-" ? "" : score;
-    }
-    getState() {
-        return this.stateInp.value;
-    }
-    setState(state) {
-        return this.stateInp.value = state;
     }
 
 
@@ -86,6 +85,34 @@ export class PlayerBracket extends Player {
 
         return charDiv;
 
+    }
+
+    /** Creates the stateSel div elements */
+    createStateSelects()
+    {
+        //player state
+        const stateSel = document.createElement('select');
+        stateSel.classList = "bpselectDropDown";
+        // create the flag select list
+        for (let i = 0; i < flagList.length; i++) {
+
+            const flagOption = document.createElement('option');
+            flagOption.value = flagList[i].name;
+            flagOption.innerHTML = flagList[i].name;
+
+            // add colors to the list
+            flagOption.style.backgroundColor = "var(--bg5)";
+            
+            stateSel.appendChild(flagOption);
+
+        }
+
+        // add in additional none option
+        const noneOption = document.createElement('option');
+        noneOption.value = "";
+        noneOption.innerHTML = "(none)";
+        noneOption.style.backgroundColor = "var(--bg5)";
+        stateSel.appendChild(noneOption);
     }
 
     /**
