@@ -91,8 +91,33 @@ async function createEncounters(sameRound) {
         bracketPlayers[i].nameInp = nameInp;
         pFinderPos.appendChild(nameInp);
 
-        // player state
-        const stateSelect = bracketPlayers[i].stateSel;
+        //player state
+        const stateInp = document.createElement('select');
+        stateInp.classList = "bpselectDropDown";
+        // create the flag select list
+        for (let i = 0; i < flagList.length; i++) {
+
+            const flagOption = document.createElement('option');
+            flagOption.value = flagList[i].name;
+            flagOption.innerHTML = flagList[i].name;
+
+            // add colors to the list
+            flagOption.style.backgroundColor = "var(--bg5)";
+            
+            this.stateInp.appendChild(flagOption);
+
+        }
+
+        // add in additional none option
+        const noneOption = document.createElement('option');
+        noneOption.value = "";
+        noneOption.innerHTML = "(none)";
+        noneOption.style.backgroundColor = "var(--bg5)";
+        this.stateInp.appendChild(noneOption);
+
+        // function to call when selecting an option
+        this.stateInp.addEventListener("change", () => {this.updateBracket()});
+        bracketPlayers[i].stateInp = stateInp;
 
         // score
         const scoreInp = document.createElement('input');
@@ -102,7 +127,7 @@ async function createEncounters(sameRound) {
 
         // add it all up
         newEnc.appendChild(charSelect);
-        newEnc.appendChild(stateSelect);
+        newEnc.appendChild(stateInp);
         newEnc.appendChild(tagInp);
         newEnc.appendChild(pFinderPos);
         newEnc.appendChild(scoreInp);
@@ -220,7 +245,7 @@ function updateLocalBracket(previous) {
         bracketData[roundToUpdate][i] = {
             name : bracketPlayers[i].getName() || "-",
             tag: bracketPlayers[i].getTag(),
-            state: bracketPlayers[i].state,
+            state: bracketPlayers[i].getState(),
             character: bracketPlayers[i].char,
             skin: bracketPlayers[i].skin,
             iconSrc: bracketPlayers[i].iconBrowserSrc || bracketPlayers[i].iconSrc,

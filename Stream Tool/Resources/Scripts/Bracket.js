@@ -22,7 +22,7 @@ class BracketPlayer {
         // assign the html elements to variables
         this.nameEl = document.getElementById(round).getElementsByClassName("playerName")[pos];
         this.tagEl = document.getElementById(round).getElementsByClassName("playerTag")[pos];
-        this.stateEl = document.getElementById(round).getElementsByClassName("playerState")[pos];
+        this.stateEl = document.getElementById(round).getElementsByClassName("playerState")[pos]
         this.charEl = document.getElementById(round).getElementsByClassName("playerIcon")[pos];
         this.scoreEl = document.getElementById(round).getElementsByClassName("score")[pos];
     
