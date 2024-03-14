@@ -14,6 +14,7 @@ export class PlayerName {
 
     #name = "";
     #tag = "";
+    #state = "";
 
     #nameEl;
     #tagEl;
@@ -75,7 +76,7 @@ export class PlayerName {
     }
 
     getState() {
-        return this.#stateImg;
+        return this.#state;
     }
 
     /**
@@ -89,6 +90,7 @@ export class PlayerName {
         // update internal variables
         this.#name = name;
         this.#tag = tag;
+        this.#state = state;
                 
         // if the image to show changed
         if (this.#imgSrc != `Resources/SVGs/Flags/${state}.svg`) {
