@@ -103,6 +103,11 @@ body {
     font-size: 28px;
     white-space: nowrap;
 }
+.playerState {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
 
 .score {
     display: flex;

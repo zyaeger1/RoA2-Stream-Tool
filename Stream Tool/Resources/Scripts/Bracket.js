@@ -4,22 +4,25 @@ let bracketData;
 let playerData = [];
 const playerSize = '28px';
 const tagSize = '16px';
+const stateSize = '20px';
 const fadeOutTime = .3;
 const fadeInTime = .3;
 let webSocket;
 
 class BracketPlayer {
 
-    constructor(round, pos) {
+    constructor(round, pos, state) {
 
         this.round = round;
         this.pos = pos;
+        this.state = state;
         this.char;
         this.skin;
 
         // assign the html elements to variables
         this.nameEl = document.getElementById(round).getElementsByClassName("playerName")[pos];
         this.tagEl = document.getElementById(round).getElementsByClassName("playerTag")[pos];
+        this.stateEl = document.getElementById(round).getElementsByClassName("playerState")[pos]
         this.charEl = document.getElementById(round).getElementsByClassName("playerIcon")[pos];
         this.scoreEl = document.getElementById(round).getElementsByClassName("score")[pos];
     
@@ -29,7 +32,8 @@ class BracketPlayer {
 
         // text update
         if (this.nameEl.innerHTML != bracketData[this.round][this.pos].name ||
-        this.tagEl.innerHTML != bracketData[this.round][this.pos].tag) {
+        this.tagEl.innerHTML != bracketData[this.round][this.pos].tag ||
+        this.stateEl.innerHTML != bracketData[this.round][this.pos].state) {
             this.updateName();
         }
 
@@ -54,6 +58,8 @@ class BracketPlayer {
             this.nameEl.innerHTML = bracketData[this.round][this.pos].name;
             this.tagEl.style.fontSize = tagSize;
             this.tagEl.innerHTML = bracketData[this.round][this.pos].tag;
+            this.stateEl.style = stateSize;
+            this.stateEl.innerHTML = bracketData[this.round][this.pos].state;
 
             // remove tag from flow if not visible
             if (this.tagEl.innerHTML == "") {
@@ -63,6 +69,17 @@ class BracketPlayer {
                 this.tagEl.style.display = "block";
                 this.tagEl.parentElement.style.transform = "translate(3px, -3px)";
             }
+
+            // remove state from flow if not visible
+            if (this.stateEl.innerHTML == "") {
+                this.stateEl.style.display = "none";
+                this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
+            } else {
+                this.stateEl.style.display = "block";
+                this.stateEl.parentElement.style.transform = "translate(3px, -3px)";
+            }
+
+
 
             resizeText(this.nameEl.parentElement);
             fadeIn(this.nameEl.parentElement);
