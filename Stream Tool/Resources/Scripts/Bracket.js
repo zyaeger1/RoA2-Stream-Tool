@@ -71,12 +71,12 @@ class BracketPlayer {
             }
 
             // remove state from flow if not visible
-            if (this.stateEl.src == "") {
-                this.stateEl.style.display = "none";
-                this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
-            } else {
+            if (bracketData[this.round][this.pos].state) {
                 this.stateEl.style.display = "block";
                 this.stateEl.parentElement.style.transform = "translate(3px, -3px)";
+            } else {
+                this.stateEl.style.display = "none";
+                this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
             }
 
 
