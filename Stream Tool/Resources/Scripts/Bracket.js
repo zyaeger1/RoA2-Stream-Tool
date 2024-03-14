@@ -4,7 +4,7 @@ let bracketData;
 let playerData = [];
 const playerSize = '28px';
 const tagSize = '16px';
-const stateSize = '20px';
+const stateSize = '30px';
 const fadeOutTime = .3;
 const fadeInTime = .3;
 let webSocket;

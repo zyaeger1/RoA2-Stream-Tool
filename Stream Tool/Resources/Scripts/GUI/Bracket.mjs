@@ -116,7 +116,6 @@ async function createEncounters(sameRound) {
         stateInp.appendChild(noneOption);
 
         // function to call when selecting an option
-        stateInp.addEventListener("change", () => {this.updateBracket()});
         bracketPlayers[i].stateInp = stateInp;
 
         // score
