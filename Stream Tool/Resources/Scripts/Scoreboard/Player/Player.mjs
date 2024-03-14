@@ -59,7 +59,7 @@ export class Player {
     }
 
     /**
-     * Update player name and tag, fading them out and in
+     * Update player name and tag + state, fading them out and in
      * @param {String} name - Name of the player
      * @param {String} tag - Tag of the player
      * @param {String} state - State of the player

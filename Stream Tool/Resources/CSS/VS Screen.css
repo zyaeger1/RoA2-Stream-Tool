@@ -357,6 +357,13 @@ body {
     color: lightgray;
 }
 
+.state {
+    max-width: 95px;
+    max-height: 95px;
+    padding-right: 5px;
+    object-fit: scale-down;
+}
+
 
 .teamName {
     position: absolute;

@@ -41,8 +41,8 @@ class Players {
         // for every player sent
         for (let i = 0; i < data.length; i++) {
 
-            // update player name and tag
-            this.#players[i].updateName(data[i].name, data[i].tag);
+            // update player name and tag + state
+            this.#players[i].updateName(data[i].name, data[i].tag, data[i].state);
 
             // update pronouns and socials
             this.#players[i].updateInfo(data[i].pronouns, data[i].socials);

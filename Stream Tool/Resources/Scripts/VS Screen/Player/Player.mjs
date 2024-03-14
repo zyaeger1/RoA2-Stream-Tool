@@ -18,10 +18,11 @@ export class Player {
      */
     constructor(wrapEl, infoEl, charaEl, bgEl, id) {
 
-        // player name and tag
+        // player name and tag and state
         const nameEl = wrapEl.getElementsByClassName("name")[0];
         const tagEl = wrapEl.getElementsByClassName("tag")[0];
-        this.#pName = new PlayerName(nameEl, tagEl, id);
+        const stateImg = wrapEl.getElementsByClassName("state")[0];
+        this.#pName = new PlayerName(nameEl, tagEl, stateImg, id);
 
         // player info
         this.#pInfo = new PlayerInfo(infoEl, id);
@@ -35,15 +36,16 @@ export class Player {
 
 
     /**
-     * Update player name and tag, fading them out and in
+     * Update player name and tag + state, fading them out and in
      * @param {String} name - Name of the player
      * @param {String} tag - Tag of the player
+     * @param {String} state - State of the player
      */
-    updateName(name, tag) {
+    updateName(name, tag, state) {
 
         // if either name or tag do not match
-        if (name != this.#pName.getName() || tag != this.#pName.getTag()) {
-            this.#pName.update(name, tag);
+        if (name != this.#pName.getName() || tag != this.#pName.getTag() || state != this.#pName.getState()) {
+            this.#pName.update(name, tag, state);
         }
 
     }
