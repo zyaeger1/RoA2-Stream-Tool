@@ -123,7 +123,7 @@ export class PlayerName {
         resizeText(this.#wrapperEl);
 
         // and fade everything in!
-        if (this.getName() || this.getTag()) { // only if theres content
+        if (this.getName() || this.getTag() || this.getState()) { // only if theres content
             if (gamemode.getGm() == 2) {
                 fadeIn(this.#wrapperEl, fadeInTimeSc, delayTime);
                 fadeIn(this.#stateImg, fadeInTimeSc, delay + .35);
