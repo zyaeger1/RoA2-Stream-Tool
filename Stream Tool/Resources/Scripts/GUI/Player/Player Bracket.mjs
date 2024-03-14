@@ -4,6 +4,7 @@ export class PlayerBracket extends Player {
 
     tagInp;
     charDiv;
+    stateInp;
     iconBrowserSrc;
     scoreInp;
 
@@ -32,6 +33,12 @@ export class PlayerBracket extends Player {
     }
     setScore(score) {
         this.scoreInp.value = score == "-" ? "" : score;
+    }
+    getState() {
+        return this.stateInp.value;
+    }
+    setState(state) {
+        return this.stateInp.value = state;
     }
 
 

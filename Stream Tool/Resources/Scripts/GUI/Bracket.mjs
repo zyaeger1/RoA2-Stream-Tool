@@ -1,4 +1,6 @@
 import { viewport } from './Viewport.mjs';
+import { getJson, saveJson } from "./File System.mjs";
+import { stPath } from "./Globals.mjs";
 import { bracketPlayers, players } from './Player/Players.mjs';
 import { PlayerBracket } from "./Player/Player Bracket.mjs";
 import { displayNotif } from './Notifications.mjs';
@@ -7,11 +9,13 @@ import { inside } from './Globals.mjs';
 
 const bRoundSelect = document.getElementById('bracketRoundSelect');
 const bEncountersDiv = document.getElementById('bracketEncounters');
+const flagList = await getJson(stPath.text + "/Flag Names");
 
 // just the initial state of the bracket
 const blankPlayerData = {
     name: "-",
     tag: "",
+    state: "",
     character: "None",
     skin: "-",
     iconSrc: "",
@@ -87,6 +91,34 @@ async function createEncounters(sameRound) {
         bracketPlayers[i].nameInp = nameInp;
         pFinderPos.appendChild(nameInp);
 
+        //player state
+        const stateInp = document.createElement('select');
+        stateInp.classList = "bpselectDropDown";
+        // create the flag select list
+        for (let i = 0; i < flagList.length; i++) {
+
+            const flagOption = document.createElement('option');
+            flagOption.value = flagList[i].name;
+            flagOption.innerHTML = flagList[i].name;
+
+            // add colors to the list
+            flagOption.style.backgroundColor = "var(--bg5)";
+            
+            this.stateInp.appendChild(flagOption);
+
+        }
+
+        // add in additional none option
+        const noneOption = document.createElement('option');
+        noneOption.value = "";
+        noneOption.innerHTML = "(none)";
+        noneOption.style.backgroundColor = "var(--bg5)";
+        this.stateInp.appendChild(noneOption);
+
+        // function to call when selecting an option
+        this.stateInp.addEventListener("change", () => {this.updateBracket()});
+        bracketPlayers[i].stateInp = stateInp;
+
         // score
         const scoreInp = document.createElement('input');
         scoreInp.classList = "bScoreInp bInput textInput mousetrap";
@@ -95,6 +127,7 @@ async function createEncounters(sameRound) {
 
         // add it all up
         newEnc.appendChild(charSelect);
+        newEnc.appendChild(stateInp);
         newEnc.appendChild(tagInp);
         newEnc.appendChild(pFinderPos);
         newEnc.appendChild(scoreInp);
@@ -102,6 +135,7 @@ async function createEncounters(sameRound) {
         // set the current bracket data
         bracketPlayers[i].setName(bracketData[bRoundSelect.value][i].name);
         bracketPlayers[i].setTag(bracketData[bRoundSelect.value][i].tag);
+        bracketPlayers[i].setState(bracketData[bRoundSelect.value][i].state);
         bracketPlayers[i].setScore(bracketData[bRoundSelect.value][i].score);
         await bracketPlayers[i].charChange(bracketData[bRoundSelect.value][i].character);
         bracketPlayers[i].skinChange(bracketData[bRoundSelect.value][i].skin);
@@ -151,6 +185,7 @@ async function copyFromGameToBracket() {
     for (let i = 0; i < 2; i++) {
         bracketPlayers[num+i].setName(players[i].getName());
         bracketPlayers[num+i].setTag(players[i].tag);
+        bracketPlayers[num+i].setState(players[i].state);
         bracketPlayers[num+i].setScore(scores[i].getScore());
         await bracketPlayers[num+i].charChange(players[i].char, true);
         bracketPlayers[num+i].skinChange(players[i].skin);
@@ -210,6 +245,7 @@ function updateLocalBracket(previous) {
         bracketData[roundToUpdate][i] = {
             name : bracketPlayers[i].getName() || "-",
             tag: bracketPlayers[i].getTag(),
+            state: bracketPlayers[i].getState(),
             character: bracketPlayers[i].char,
             skin: bracketPlayers[i].skin,
             iconSrc: bracketPlayers[i].iconBrowserSrc || bracketPlayers[i].iconSrc,
