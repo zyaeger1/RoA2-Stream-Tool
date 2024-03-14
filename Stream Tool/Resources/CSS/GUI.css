@@ -1017,6 +1017,22 @@ button:hover {
   width: 50px;
 }
 
+.bpselectDropDown {
+  border-color: var(--selected);
+  height: 30px;
+  width: 100px;
+  color: var(--text1);
+  background: var(--bg4);
+  transition: border-color 100ms;
+  box-sizing: border-box;
+}
+.bpselectDropDown:hover {
+  border-color: var(--selected);
+}
+.bpselectDropDown:active {
+  background-color: var(--bg2);
+}
+
 
 #bBotButts {
   display: flex;
