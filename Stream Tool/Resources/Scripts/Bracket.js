@@ -106,8 +106,6 @@ class BracketPlayer {
                 this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
             }
 
-
-
             fadeIn(this.stateEl);
 
         });
