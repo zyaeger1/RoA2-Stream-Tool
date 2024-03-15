@@ -4,7 +4,6 @@ let bracketData;
 let playerData = [];
 const playerSize = '28px';
 const tagSize = '16px';
-const stateSize = '30px';
 const fadeOutTime = .3;
 const fadeInTime = .3;
 let webSocket;
@@ -32,8 +31,7 @@ class BracketPlayer {
 
         // text update
         if (this.nameEl.innerHTML != bracketData[this.round][this.pos].name ||
-        this.tagEl.innerHTML != bracketData[this.round][this.pos].tag ||
-        this.state != bracketData[this.round][this.pos].state) {
+        this.tagEl.innerHTML != bracketData[this.round][this.pos].tag) {
             this.updateName();
         }
 
@@ -47,12 +45,15 @@ class BracketPlayer {
         this.skin != bracketData[this.round][this.pos].skin) {
             this.updateChar();
         }
+
+        // state update
+        if (this.state != bracketData[this.round][this.pos].state) {
+            this.updateState();
+        }
         
     }
 
     updateName() {
-
-        this.state = bracketData[this.round][this.pos].state
         
         fadeOut(this.nameEl.parentElement).then( () => {
 
@@ -60,7 +61,6 @@ class BracketPlayer {
             this.nameEl.innerHTML = bracketData[this.round][this.pos].name;
             this.tagEl.style.fontSize = tagSize;
             this.tagEl.innerHTML = bracketData[this.round][this.pos].tag;
-            this.stateEl.style = stateSize;
             this.stateEl.src = `Resources/SVGs/Flags/${bracketData[this.round][this.pos].state}.svg`;
 
             // remove tag from flow if not visible
@@ -85,6 +85,30 @@ class BracketPlayer {
 
             resizeText(this.nameEl.parentElement);
             fadeIn(this.nameEl.parentElement);
+
+        });
+
+    }
+
+    updateState() {
+
+        this.state = bracketData[this.round][this.pos].state
+        fadeOut(this.stateEl).then( () => {
+
+            this.stateEl.src = `Resources/SVGs/Flags/${bracketData[this.round][this.pos].state}.svg`;
+
+            // remove state from flow if not visible
+            if (bracketData[this.round][this.pos].state) {
+                this.stateEl.style.display = "block";
+                this.stateEl.parentElement.style.transform = "translate(3px, -3px)";
+            } else {
+                this.stateEl.style.display = "none";
+                this.stateEl.parentElement.style.transform = "translate(3px, 0px)";
+            }
+
+
+
+            fadeIn(this.stateEl);
 
         });
 

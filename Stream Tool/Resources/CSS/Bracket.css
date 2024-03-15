@@ -84,14 +84,13 @@ body {
 }
 
 .playerIcon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    image-rendering: pixelated;
     display: none;
 }
 .playerWrapper {
-    width: 89%;
+    width: 60%;
     white-space: nowrap;
     line-height: 20px;
 }
@@ -104,8 +103,8 @@ body {
     white-space: nowrap;
 }
 .playerState {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
