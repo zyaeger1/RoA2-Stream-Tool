@@ -36,8 +36,8 @@ module.exports = function initExec(rPath, nPath, wSocket) {
         failed = true;
         httpPort = 7070;
         wsPort = 8080;
-        guiWidth = 1050;
-        guiHeight = 525;
+        guiWidth = 840;
+        guiHeight = 420;
     }
 
 
@@ -161,9 +161,9 @@ function createWindow() {
     ipcMain.on('defaultWindow', (event) => {
         // windows includes frame borders on the window dimensions and i hate it
         if (process.platform == "win32") {
-            win.setBounds({width: 1050, height: 525});
+            win.setBounds({width: 800, height: 420});
         } else {
-            win.setBounds({width: 1050, height: 525});
+            win.setBounds({width: 800, height: 420});
         }
     })
 
