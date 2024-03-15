@@ -11,11 +11,11 @@ let webSocket;
 
 class BracketPlayer {
 
-    constructor(round, pos, state) {
+    constructor(round, pos) {
 
         this.round = round;
         this.pos = pos;
-        this.state = state;
+        this.state
         this.char;
         this.skin;
 
@@ -33,7 +33,7 @@ class BracketPlayer {
         // text update
         if (this.nameEl.innerHTML != bracketData[this.round][this.pos].name ||
         this.tagEl.innerHTML != bracketData[this.round][this.pos].tag ||
-        this.stateEl.src != `Resources/SVGs/Flags/${bracketData[this.round][this.pos].state}.svg`) {
+        this.state != bracketData[this.round][this.pos].state) {
             this.updateName();
         }
 
@@ -51,6 +51,8 @@ class BracketPlayer {
     }
 
     updateName() {
+
+        this.state = bracketData[this.round][this.pos].state
         
         fadeOut(this.nameEl.parentElement).then( () => {
 
