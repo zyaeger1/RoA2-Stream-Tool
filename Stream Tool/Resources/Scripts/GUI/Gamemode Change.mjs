@@ -55,9 +55,9 @@ class Gamemode {
             // change max width to the name inputs and char selects
             for (let i = 0; i < players.length; i++) {
 
-                players[i].nameInp.style.maxWidth = "94px";
-                players[i].charSel.style.maxWidth = "73px";
-                players[i].skinSel.style.maxWidth = "72px";
+                players[i].nameInp.style.maxWidth = "250px";
+                players[i].charSel.style.maxWidth = "141px";
+                players[i].skinSel.style.maxWidth = "141px";
 
             }
 
@@ -94,7 +94,7 @@ class Gamemode {
 
             for (let i = 0; i < players.length; i++) {
 
-                players[i].nameInp.style.maxWidth = "210px";
+                players[i].nameInp.style.maxWidth = "250px";
                 players[i].charSel.style.maxWidth = "141px";
                 players[i].skinSel.style.maxWidth = "141px";
                 
