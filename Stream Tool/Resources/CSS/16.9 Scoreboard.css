@@ -86,7 +86,7 @@ body {
     white-space: nowrap;
 }
 .wrappersSingles {
-    width: 246px;
+    width: 205px;
     height: 36px;   
     top: 34px;
     line-height: 32px;
@@ -106,7 +106,7 @@ body {
     left: 38px;
 }
 #p2Wrapper {
-    right: 38px;
+    right: 79px;
 }
 #p3Wrapper {
     left: 106px;
@@ -536,7 +536,7 @@ man i hate chromium
     left: 248px;
 }
 #tagLogoP2 {
-    right: 40px;
+    right: 38px;
 }
 
 

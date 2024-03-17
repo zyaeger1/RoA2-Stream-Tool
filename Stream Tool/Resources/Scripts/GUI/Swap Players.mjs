@@ -27,6 +27,7 @@ export async function swapPlayers() {
         [players[i].tag, players[i+1].tag] = [players[i+1].tag, players[i].tag];
         [players[i].pronouns, players[i+1].pronouns] = [players[i+1].pronouns, players[i].pronouns];
         [players[i].socials, players[i+1].socials] = [players[i+1].socials, players[i].socials];
+        [players[i].state, players[i+1].state] = [players[i+1].state, players[i].state];
 
         //characters and skins
         const tempP1Char = players[i].char;
