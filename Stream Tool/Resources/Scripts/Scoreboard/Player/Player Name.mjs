@@ -109,7 +109,6 @@ export class PlayerName {
             // wait for the fadeout to proceed
             if (gamemode.getGm() == 2) {
                 await fadeOut(this.#wrapperEl, fadeOutTimeSc);
-                await fadeOut(this.#stateImg, fadeOutTimeSc);
             } else {
                 await fadeOutMove(this.#wrapperEl, null, this.#side);
             }
@@ -126,7 +125,6 @@ export class PlayerName {
         if (this.getName() || this.getTag() || this.getState()) { // only if theres content
             if (gamemode.getGm() == 2) {
                 fadeIn(this.#wrapperEl, fadeInTimeSc, delayTime);
-                fadeIn(this.#stateImg, fadeInTimeSc, delay + .35);
             } else {
                 fadeInMove(this.#wrapperEl, null, this.#side, delayTime);
             }
@@ -187,7 +185,6 @@ export class PlayerName {
     show() {
         if (gamemode.getGm() == 2) {
             fadeIn(this.#wrapperEl, fadeInTimeSc, current.delay);
-            fadeIn(this.#stateImg, fadeInTimeSc, current.delay + .35);
         } else {
             fadeInMove(this.#wrapperEl, null, this.#side, current.delay);
         }
