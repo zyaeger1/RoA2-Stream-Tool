@@ -1,6 +1,3 @@
-import { fadeIn } from "../../Utils/Fade In.mjs";
-import { fadeOut } from "../../Utils/Fade Out.mjs";
-import { current } from "../../Utils/Globals.mjs";
 import { PlayerCharacter } from "./Player Character.mjs";
 import { PlayerName } from "./Player Name.mjs";
 import { PlayerInfo } from "./Player Pronouns.mjs";
@@ -13,12 +10,12 @@ export class Player {
 
     /**
      * Manages all info related to a player on the Scoreboard
-     * @param {HTMLElement} wrapEl - Wrapper containing name and tag
+     * @param {HTMLElement} wrapEl - Wrapper containing name and tag + state
      * @param {HTMLElement} pronEl - Element containing player pronouns
      * @param {HTMLElement} charEl - Element containing character image
      * @param {Number} id - Player slot
      */
-    constructor(wrapEl, pronEl, charEl, stateEl, id) {
+    constructor(wrapEl, pronEl, charEl, id) {
 
         // player name and tag and state
         const nameEl = wrapEl.getElementsByClassName("names")[0];
