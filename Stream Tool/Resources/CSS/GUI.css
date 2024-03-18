@@ -1020,7 +1020,8 @@ button:hover {
 .bpselectDropDown {
   border-color: var(--selected);
   height: 30px;
-  width: 100px;
+  /* width: 100px; */
+  border-radius: 3px;
   color: var(--text1);
   background: var(--bg4);
   transition: border-color 100ms;
@@ -1122,6 +1123,10 @@ button:hover {
 .pInfoInput {
   width: 100px;
   border-radius: 0;
+}
+
+#pInfoInputState {
+  width: 120px;
 }
 
 .pInfoBotButt {
