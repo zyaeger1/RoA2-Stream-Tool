@@ -12,6 +12,7 @@ export class Caster {
 
     tag = "";
     pronouns = "";
+    state = "";
     socials = {};
 
     #nameEl;
@@ -74,6 +75,12 @@ export class Caster {
     }
     setPronouns(text) {
         this.pronouns = text;
+    }
+    getState() {
+        return this.state;
+    }
+    setState(state) {
+        return this.state = state;
     }
     getTag() {
         return this.tag;
