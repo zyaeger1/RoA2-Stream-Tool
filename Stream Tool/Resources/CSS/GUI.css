@@ -354,7 +354,7 @@ button:hover {
 
 
 .selector {
-  max-width: 145px;
+  /* max-width: 145px; */
   height: 32px;
   color: var(--text1);
   background-color: var(--bg4);
@@ -391,9 +391,9 @@ button:hover {
   object-fit: contain;
 }
 
-.bCharSelector {
+/* .bCharSelector {
   width: 70px;
-}
+} */
 
 
 .finder {
@@ -449,11 +449,11 @@ button:hover {
   border-left: 1px solid var(--selected);
 }
 
-.bSkinSelector {
+/* .bSkinSelector {
   width: 50px;
-}
+} */
 .bSkinSelector:hover {
-  width: 51px;
+  /* width: 51px; */
   margin-left: -1px;
   border-left: 1px solid var(--selected);
 }
