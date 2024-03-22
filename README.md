@@ -12,7 +12,7 @@ So you want to do a Project+ stream, huh? Well, today is your lucky day, because
 ---
 
 ## Features
-- [Easy and fast setup]() using a browser source. Drag and drop!
+- [Easy and fast setup](https://file.garden/Zf2bnkmk1CN8FNMM/Setup.mp4) using a browser source. Drag and drop!
 - [Handy interface]() to quickly change everything you need, like player names, pronouns, characters, scores, round, casters...
   - With customizable **Player and Commentator Presets** to setup your match in no time!
 - Every single character and skin the game has to offer is supported (more than 600 different skins!).
