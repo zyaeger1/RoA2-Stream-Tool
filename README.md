@@ -17,7 +17,7 @@ So you want to do a Project+ stream, huh? Well, today is your lucky day, because
   - With customizable **Player and Commentator Presets** to setup your match in no time!
 - Every single character and skin the game has to offer is supported (more than 600 different skins!).
 - A [16:9](https://raw.githubusercontent.com/ilikepizza107/Project-Plus-Stream-Tool/master/Git%20Images/16-9.png) and [4:3](https://raw.githubusercontent.com/ilikepizza107/Project-Plus-Stream-Tool/master/Git%20Images/4-3.png) overlay!
-- A "[VS Screen]()" to be displayed when waiting for the next game.
+- A "[VS Screen](https://file.garden/Zf2bnkmk1CN8FNMM/VSDemo.mp4)" to be displayed when waiting for the next game.
 - A [Bracket View](https://raw.githubusercontent.com/ilikepizza107/Project-Plus-Stream-Tool/master/Git%20Images/BracketPreview.png) to showcase your tournament's top 8 positions!
 - A [Remote GUI](https://raw.githubusercontent.com/ilikepizza107/Project-Plus-Stream-Tool/master/Git%20Images/RemoteGUI.png) that can be accessed by any device within the local network, including mobile devices!
 - Now with **2v2 support**!
