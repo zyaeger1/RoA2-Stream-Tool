@@ -43,7 +43,7 @@ Repeat from the 3rd step to add the `VS Screen.html` and `Bracket.html` views, t
 
 ***Functionallity may change in some menus to ease workflow.**
 
-For developing, there are some shorcuts to make things easier:
+For developing, there are some shortcuts to make things easier:
 - Press `F5` to reload the GUI.
 - Press `F12` to open the dev console. This will also unlock window resolution.
 
