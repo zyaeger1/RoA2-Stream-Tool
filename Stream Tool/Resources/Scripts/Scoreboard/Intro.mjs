@@ -134,8 +134,8 @@ class ScoreboardIntro {
             }
         }
 
-        roundText.textContent = data.round;
-        tournamentText.textContent = data.tournamentName;
+        roundText.innerHTML = data.round || "&nbsp";
+        tournamentText.innerHTML = data.tournamentName || "&nbsp";
         
         // round, tournament and VS/GameX text fade in
         fadeIn(textsIntro, fadeInTimeSc, introDelaySc-.2);
