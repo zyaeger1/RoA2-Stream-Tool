@@ -32,7 +32,7 @@ These are instructions for **OBS Studio**:
 - Drag and drop `16.9 Scoreboard.html` or `4.3 Scoreboard.html` into OBS, or add a new browser source in OBS pointing at the local file.
   - If the source looks weird, manually set the source's properties to 1920 width and 1080 height, or set your OBS canvas resolution to 1080p, or make the source fit the screen (Ctrl+F).
 - In the source's properties, change *Use custom frame rate* -> `60` (if streaming at 60fps of course).
-- Manage it all with the `Project+ Stream Tool` executable.
+- Manage it all with the `Project+ Stream Tool` executable (or project-st-gui.app if you are on Mac).
 
 Repeat from the 3rd step to add the `VS Screen.html` and `Bracket.html` views, though I recommend you to do so on another scene.
 

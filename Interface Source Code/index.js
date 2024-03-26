@@ -5,6 +5,10 @@ const WebSocket = require('ws')
 let resourcesPath;
 if (process.platform == "win32") { // if on Windows
     resourcesPath = path.resolve(process.env.PORTABLE_EXECUTABLE_DIR, 'Resources');
+} else if (process.platform == "darwin") { // if on MacOS
+    // The ../../../.. here is specific to how/where the executable ends up after
+    // it gets packaged into the .app
+    resourcesPath = path.resolve(process.execPath, "../../../..", 'Resources');
 } else { // if on Linux
     resourcesPath = path.resolve('.', 'Resources');
 }

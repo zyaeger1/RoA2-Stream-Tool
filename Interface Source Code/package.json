@@ -21,6 +21,9 @@
     },
     "win": {
       "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
     }
   },
   "dependencies": {
