@@ -59,8 +59,8 @@
     "vsScreen": {
         "neutral": {
             "x": -485,
-            "y": 140,
-            "scale": 2.5
+            "y": 100,
+            "scale": 2
         }
     },
     "gui": {

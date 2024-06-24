@@ -44,6 +44,15 @@
         },
         {
             "name": "Pikachu (15)"
+        },
+		{
+            "name": "Pikachu (16)"
+        },
+		{
+            "name": "Pikachu (17)"
+        },
+		{
+            "name": "Pikachu (18)"
         }
     ],
     "scoreboard": {
@@ -57,7 +66,7 @@
         "neutral": {
             "x": -485,
             "y": 60,
-            "scale": 2.5
+            "scale": 2
         }
     },
     "gui": {
