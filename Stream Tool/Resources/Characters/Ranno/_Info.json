@@ -1,108 +1,120 @@
 {
-    "skinList": [
-        {
-            "name": "Default"
-        },
-		{
-            "name": "Default (Red)"
-        },
-		{
-            "name": "Default (Blue)"
-        },
-		{
-            "name": "Default (Green)"
-        },
-		{
-            "name": "Default (Mint)"
-        },
-		{
-            "name": "Default (Purple)"
-        },
-		{
-            "name": "Default (Black)"
-        },
-		{
-            "name": "Default (Spooky)"
-        },
-		{
-            "name": "Default (Cool Blue)"
-        },
-		{
-            "name": "Solid"
-        },
-		{
-            "name": "Solid (Red)"
-        },
-		{
-            "name": "Solid (Blue)"
-        },
-		{
-            "name": "Solid (Green)"
-        },
-		{
-            "name": "Dart"
-        },
-		{
-            "name": "Dart (Red)"
-        },
-		{
-            "name": "Dart (Blue)"
-        },
-		{
-            "name": "Dart (Green)"
-        },
-		{
-            "name": "Abyss"
-        },
-		{
-            "name": "Abyss (Red)"
-        },
-		{
-            "name": "Abyss (Blue)"
-        },
-		{
-            "name": "Abyss (Green)"
-        },
-		{
-            "name": "Retro"
-        },
-		{
-            "name": "Retro (Red)"
-        },
-		{
-            "name": "Retro (Blue)"
-        },
-		{
-            "name": "Retro (Green)"
-        },
-		{
-            "name": "Retro (Black)"
-        },
-		{
-            "name": "Tuxedo"
-        },
-		{
-            "name": "Tuxedo (Red)"
-        },
-		{
-            "name": "Tuxedo (Blue)"
-        },
-		{
-            "name": "Tuxedo (Green)"
-        },
-		{
-            "name": "Black Widow"
-        },
-		{
-            "name": "Black Widow (Red)"
-        },
-		{
-            "name": "Black Widow (Blue)"
-        },
-		{
-            "name": "Black Widow (Green)"
-        }
-    ],
+  "skinList": [
+    {
+      "name": "Default"
+    },
+    {
+      "name": "Default (Red)"
+    },
+    {
+      "name": "Default (Blue)"
+    },
+    {
+      "name": "Default (Green)"
+    },
+    {
+      "name": "Default (Mint)"
+    },
+    {
+      "name": "Default (Purple)"
+    },
+    {
+      "name": "Default (Black)"
+    },
+    {
+      "name": "Default (Spooky)"
+    },
+    {
+      "name": "Default (Cool Blue)"
+    },
+    {
+      "name": "Solid"
+    },
+    {
+      "name": "Solid (Red)"
+    },
+    {
+      "name": "Solid (Blue)"
+    },
+    {
+      "name": "Solid (Green)"
+    },
+    {
+      "name": "Dart"
+    },
+    {
+      "name": "Dart (Red)"
+    },
+    {
+      "name": "Dart (Blue)"
+    },
+    {
+      "name": "Dart (Green)"
+    },
+    {
+      "name": "Abyss"
+    },
+    {
+      "name": "Abyss (Red)"
+    },
+    {
+      "name": "Abyss (Blue)"
+    },
+    {
+      "name": "Abyss (Green)"
+    },
+    {
+      "name": "Retro"
+    },
+    {
+      "name": "Retro (Red)"
+    },
+    {
+      "name": "Retro (Blue)"
+    },
+    {
+      "name": "Retro (Green)"
+    },
+    {
+      "name": "Retro (Black)"
+    },
+    {
+      "name": "Tuxedo"
+    },
+    {
+      "name": "Tuxedo (Red)"
+    },
+    {
+      "name": "Tuxedo (Blue)"
+    },
+    {
+      "name": "Tuxedo (Green)"
+    },
+    {
+      "name": "Black Widow"
+    },
+    {
+      "name": "Black Widow (Red)"
+    },
+    {
+      "name": "Black Widow (Blue)"
+    },
+    {
+      "name": "Black Widow (Green)"
+    },
+    {
+      "name": "Low Poly"
+    },
+    {
+      "name": "Low Poly (Red)"
+    },
+    {
+      "name": "Low Poly (Blue)"
+    },
+    {
+      "name": "Low Poly (Green)"
+    }
+  ],
     "scoreboard": {
         "neutral": {
             "x": 23,
