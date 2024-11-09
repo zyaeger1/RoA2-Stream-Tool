@@ -1,0 +1,115 @@
+{
+    "skinList": [
+        {
+            "name": "Default"
+        },
+		{
+            "name": "Default (Red)"
+        },
+		{
+            "name": "Default (Blue)"
+        },
+		{
+            "name": "Default (Green)"
+        },
+		{
+            "name": "Default (Mint)"
+        },
+		{
+            "name": "Default (Purple)"
+        },
+		{
+            "name": "Default (Black)"
+        },
+		{
+            "name": "Default (Spooky)"
+        },
+		{
+            "name": "Default (Cool Blue)"
+        },
+		{
+            "name": "Leopard Shark"
+        },
+		{
+            "name": "Leopard Shark (Red)"
+        },
+		{
+            "name": "Leopard Shark (Blue)"
+        },
+		{
+            "name": "Leopard Shark (Green)"
+        },
+		{
+            "name": "Clownfish"
+        },
+		{
+            "name": "Clownfish (Red)"
+        },
+		{
+            "name": "Clownfish (Blue)"
+        },
+		{
+            "name": "Clownfish (Green)"
+        },
+		{
+            "name": "Abyss"
+        },
+		{
+            "name": "Abyss (Red)"
+        },
+		{
+            "name": "Abyss (Blue)"
+        },
+		{
+            "name": "Abyss (Green)"
+        },
+		{
+            "name": "Retro"
+        },
+		{
+            "name": "Retro (Red)"
+        },
+		{
+            "name": "Retro (Blue)"
+        },
+		{
+            "name": "Retro (Green)"
+        },
+		{
+            "name": "Retro (Black)"
+        },
+		{
+            "name": "Axolotl"
+        },
+		{
+            "name": "Axolotl (Red)"
+        },
+		{
+            "name": "Axolotl (Blue)"
+        },
+		{
+            "name": "Axolotl (Green)"
+        }
+    ],
+    "scoreboard": {
+        "neutral": {
+            "x": 2,
+            "y": 18,
+            "scale": 2.0
+        }
+    },
+    "vsScreen": {
+        "neutral": {
+            "x": -590,
+            "y": 50,
+            "scale": 1.25
+        }
+    },
+    "gui": {
+        "neutral": {
+            "x": 5,
+            "y": -5,
+            "scale": 0.85
+        }
+    }
+}

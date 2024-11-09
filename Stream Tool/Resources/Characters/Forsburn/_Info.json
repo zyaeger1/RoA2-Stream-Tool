@@ -1,0 +1,115 @@
+{
+    "skinList": [
+        {
+            "name": "Default"
+        },
+		{
+            "name": "Default (Red)"
+        },
+		{
+            "name": "Default (Blue)"
+        },
+		{
+            "name": "Default (Green)"
+        },
+		{
+            "name": "Default (Mint)"
+        },
+		{
+            "name": "Default (Purple)"
+        },
+		{
+            "name": "Default (Black)"
+        },
+		{
+            "name": "Default (Spooky)"
+        },
+		{
+            "name": "Default (Cool Blue)"
+        },
+		{
+            "name": "Doberman"
+        },
+		{
+            "name": "Doberman (Red)"
+        },
+		{
+            "name": "Doberman (Blue)"
+        },
+		{
+            "name": "Doberman (Green)"
+        },
+		{
+            "name": "Abyss"
+        },
+		{
+            "name": "Abyss (Red)"
+        },
+		{
+            "name": "Abyss (Blue)"
+        },
+		{
+            "name": "Abyss (Green)"
+        },
+		{
+            "name": "Retro"
+        },
+		{
+            "name": "Retro (Red)"
+        },
+		{
+            "name": "Retro (Blue)"
+        },
+		{
+            "name": "Retro (Green)"
+        },
+		{
+            "name": "Retro (Black)"
+        },
+		{
+            "name": "Aardwolf"
+        },
+		{
+            "name": "Aardwolf (Red)"
+        },
+		{
+            "name": "Aardwolf (Blue)"
+        },
+		{
+            "name": "Aardwolf (Green)"
+        },
+		{
+            "name": "Wasteland"
+        },
+		{
+            "name": "Wasteland (Red)"
+        },
+		{
+            "name": "Wasteland (Blue)"
+        },
+		{
+            "name": "Wasteland (Green)"
+        }
+    ],
+    "scoreboard": {
+        "neutral": {
+            "x": 2,
+            "y": 18,
+            "scale": 2.0
+        }
+    },
+    "vsScreen": {
+        "neutral": {
+            "x": -590,
+            "y": 50,
+            "scale": 1.25
+        }
+    },
+    "gui": {
+        "neutral": {
+            "x": 5,
+            "y": -5,
+            "scale": 0.85
+        }
+    }
+}

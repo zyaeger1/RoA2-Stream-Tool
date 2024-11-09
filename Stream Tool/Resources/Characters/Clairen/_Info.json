@@ -1,0 +1,127 @@
+{
+    "skinList": [
+        {
+            "name": "Default"
+        },
+		{
+            "name": "Default (Red)"
+        },
+		{
+            "name": "Default (Blue)"
+        },
+		{
+            "name": "Default (Green)"
+        },
+		{
+            "name": "Default (Mint)"
+        },
+		{
+            "name": "Default (Purple)"
+        },
+		{
+            "name": "Default (Black)"
+        },
+		{
+            "name": "Default (Spooky)"
+        },
+		{
+            "name": "Default (Cool Blue)"
+        },
+		{
+            "name": "Leopard"
+        },
+		{
+            "name": "Leopard (Red)"
+        },
+		{
+            "name": "Leopard (Blue)"
+        },
+		{
+            "name": "Leopard (Green)"
+        },
+		{
+            "name": "Abyss"
+        },
+		{
+            "name": "Abyss (Red)"
+        },
+		{
+            "name": "Abyss (Blue)"
+        },
+		{
+            "name": "Abyss (Green)"
+        },
+		{
+            "name": "Retro"
+        },
+		{
+            "name": "Retro (Red)"
+        },
+		{
+            "name": "Retro (Blue)"
+        },
+		{
+            "name": "Retro (Green)"
+        },
+		{
+            "name": "Retro (Black)"
+        },
+		{
+            "name": "Leon"
+        },
+		{
+            "name": "Leon (Red)"
+        },
+		{
+            "name": "Leon (Blue)"
+        },
+		{
+            "name": "Leon (Green)"
+        },
+		{
+            "name": "Ranger"
+        },
+		{
+            "name": "Ranger (Red)"
+        },
+		{
+            "name": "Ranger (Blue)"
+        },
+		{
+            "name": "Ranger (Green)"
+        },
+		{
+            "name": "Slasher"
+        },
+		{
+            "name": "Slasher (Red)"
+        },
+		{
+            "name": "Slasher (Blue)"
+        },
+		{
+            "name": "Slasher (Green)"
+        }
+    ],
+    "scoreboard": {
+        "neutral": {
+            "x": 7,
+            "y": 17,
+            "scale": 2.0
+        }
+    },
+    "vsScreen": {
+        "neutral": {
+            "x": -590,
+            "y": 50,
+            "scale": 1.25
+        }
+    },
+    "gui": {
+        "neutral": {
+            "x": 5,
+            "y": -5,
+            "scale": 0.85
+        }
+    }
+}
